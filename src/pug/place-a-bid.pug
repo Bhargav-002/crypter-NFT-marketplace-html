@@ -1,0 +1,112 @@
+---
+title: Crypter 2
+footerHide: true
+---
+extends layouts/layout
+block content
+	// details
+	.details
+		.details__row
+			.details__col
+				// preview
+				.details-preview
+					img(src="img/content/main-pic-1.jpg" alt="")
+					.details-preview__actions
+						button.details-preview__action
+							+i('music')
+						button.details-preview__action
+							+i('full-view')
+				// statistics
+				.details__box.details-statistics
+					.details-statistics__list
+						.details-statistics__item
+							.details-statistics__label Created by
+							.details-statistics__flex
+								.details-statistics__avatar.history
+									img(src="img/content/avatar.jpg" alt="")
+								.details-statistics__wrap
+									.details-statistics__title Dash
+									.details-statistics__login @randomdash
+						.details-statistics__item
+							.details-statistics__label Collection
+							.details-statistics__flex
+								.details-statistics__image
+									img(src="img/content/balls.jpg" alt="")
+								.details-statistics__wrap
+									.details-statistics__title Escape
+									.details-statistics__category Cute
+				.details__box
+					.details__stage.h4 Details
+					.details__content
+						p We are laying the groundwork for web3 — the next generation of the internet full of limitless possibilities. Join the millions of creators, collectors, and curators who are on this journey with you.
+					// links
+					.details-links
+						a.details-links__link(href="https://crypter.net/" target="_blank")
+							+i('country')
+							| View on Etherscane
+						a.details-links__link(href="https://crypter.net/" target="_blank")
+							+i('link')
+							| View metadata
+						a.details-links__link(href="https://crypter.net/" target="_blank")
+							+i('link')
+							| View on IPFS
+					button.button-stroke-grey.button-medium.details__button
+						span Add tags
+						+i('plus')
+				.details__box
+					.details__stage.h4 Provenance
+					// provenance
+					.details-provenance
+						.details-provenance__list
+							.details-provenance__item
+								.details-provenance__avatar.history
+									img(src="img/content/avatar.jpg" alt="")
+								.details-provenance__details
+									.details-provenance__content  Minted by <span>@randomdash</span>
+									.details-provenance__date Aug 18, 2022 at 18:80
+								a.details-provenance__link(href="https://crypter.net/" target="_blank")
+									+i('external-link')
+			.details__col
+				.details__wrap
+					// head
+					.details-head
+						.details-head__top
+							.details-head__title.h3 Place a bid
+							a.button-circle.button-medium.details-head__close(href="index.html")
+								+i('close-fat')
+						.details-head__bid
+							.details-head__box
+								.details-head__label Highest bid
+								.details-head__crypto.h3 1.1 ETH
+								.details-head__price $1,815.70
+							.details-head__box
+								.details-head__label Auction ends in
+								// timer
+								ul.timer.js-timer(data-countdown="12/24/2028 23:29:59")
+									li
+										span.timer__value.hours.h3
+										span.timer__text <span>hrs</span>hours
+									li
+										span.timer__value.minutes.h3
+										span.timer__text <span>min</span>minutes
+									li
+										span.timer__value.seconds.h3
+										span.timer__text <span>sec</span>seconds
+						a.details-head__link(href="blog-detail.html") Learn how to place a bid
+					// price
+					.price
+						.price__body
+							.price__title You must bid at least <span>1.1 ETH</span>
+							.price__wrap
+								.price__box
+									.field.field_large
+										.field__wrap
+											input.field__input(type="price" name="buy" placeholder="1.10")
+									.price__currency.h3 ETH
+							button.button-large.button-wide.price__button place bid
+						.price__content
+							p Placing this bid will start a 24 hour auction for the NFT.
+							p Once a bid is placed, it cannot be withdrawn.
+
+
+

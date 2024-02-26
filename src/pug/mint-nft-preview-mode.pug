@@ -1,0 +1,87 @@
+---
+title: Crypter 2
+headerHide: true
+footerHide: true
+---
+extends layouts/layout
+block content
+	// details
+	.details
+		// exit
+		.details-exit
+			.details-exit__top
+				a.details-exit__button(href="mint-nft.html")
+					+i('close-fat')
+					span Exit preview mode
+		.details__row
+			.details__col
+				// preview
+				.details-preview
+					img(src="img/content/main-pic-1.jpg" alt="")
+					.details-preview__actions
+						button.details-preview__action
+							+i('music')
+						button.details-preview__action
+							+i('full-view')
+				// statistics
+				.details__box.details-statistics
+					.details-statistics__list
+						.details-statistics__item
+							.details-statistics__label Created by
+							.details-statistics__flex
+								.details-statistics__avatar.history
+									img(src="img/content/avatar.jpg" alt="")
+								.details-statistics__wrap
+									.details-statistics__title Dash
+									.details-statistics__login @randomdash
+						.details-statistics__item
+							.details-statistics__label Collection
+							.details-statistics__flex
+								.details-statistics__image
+									img(src="img/content/balls.jpg" alt="")
+								.details-statistics__wrap
+									.details-statistics__title Cute Planet
+									.details-statistics__category Cute
+				.details__box
+					.details__stage.h4 Details
+					.details__content
+						p We are laying the groundwork for web3 — the next generation of the internet full of limitless possibilities. Join the millions of creators, collectors, and curators who are on this journey.
+						p Official website: crypter.net
+			.details__col
+				.details__wrap
+					// caption
+					.details-caption
+						.details-caption__line
+							.details-caption__title.h2 Escape
+							.details-caption__actions
+								button.button-circle.button-medium.details-caption__button
+									+i('dots')
+								a.button-circle.button-medium.details-caption__button(href="https://crypter.net/" target="_blank")
+									+i('share')
+						.details-caption__date
+							+i('external-link')
+							| Minted on Aug 18, 2022
+					// cost
+					.details-cost
+						.details-cost__row
+							.details-cost__col
+								.details-cost__label Buy now
+								.details-cost__value.h4
+								a.button-medium.button-wide.details-cost__button(href="buy-now.html") buy now
+							.details-cost__col
+								.details-cost__label Reserve
+								.details-cost__value.h4
+								a.button-stroke-grey.button-medium.button-wide.details-cost__button(href="place-a-bid.html") place a bid
+						.details-cost__foot
+							.details-cost__box
+								.details-cost__label Last sold
+								.details-cost__value.h4
+							.details-cost__user
+								.details-cost__avatar
+									img(src="img/content/avatar.jpg" alt="")
+								.details-cost__wrap
+									.details-cost__author Dash
+									.details-cost__code 0x56C1...8eCC
+							a.button-stroke-grey.button-medium.details-cost__button(href="make-offer.html") make offer
+
+

@@ -1,0 +1,36 @@
+---
+title: Crypter 2
+classLinkMenuHelpCenter: active
+classLinkAccountHelp: active
+footerHide: true
+---
+extends layouts/layout
+block content
+	// help
+	.help
+		.help__col
+			.help__wrap
+				.help__title.hero Help center
+				.help__text We are laying the groundwork for web3 — the next generation of the internet full of limitless possibilities.
+				// form
+				form.form.form_button-right(action="")
+					// field
+					.field
+						.field__wrap
+							input.field__input(type="text" name="search" placeholder="Search topics" required)
+					button.form__button(type="submit")
+						+i('search')
+		.help__col
+			mixin category(color, title, image)
+				a.help__category(href="help-category.html")
+					.help__details
+						.help__color(style="background-color:" + color)
+						.help__subtitle.h4=title
+						.help__content Learn how to create and collect artwork
+					.help__preview
+						img(src=image alt="")
+			+category("#B9A9FB", "Gettings started on Crypter", "img/content/help-pic-1.png")
+			+category("#FFA6D6", "Create Collection & NFTs", "img/content/help-pic-2.png")
+			+category("#BCE6EC", "Buy & sell Artworks", "img/content/help-pic-3.png")
+			+category("#1966F7", "Gettings started on Crypter", "img/content/help-pic-4.png")
+			+category("#6DD3C2", "Gettings started on Crypter", "img/content/help-pic-5.png")

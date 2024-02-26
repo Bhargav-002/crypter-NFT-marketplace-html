@@ -1,0 +1,78 @@
+---
+title: Crypter 2
+footerHide: true
+---
+extends layouts/layout
+block content
+	// background
+	.background.background_cover
+		input.background__file(type="file")
+		.background__details
+			.background__title Drag and Drop to upload collection cover
+			.background__info JPG, PNG. Max 5MB
+	// collection
+	.collection
+		.collection__col
+			.collection__photo
+				+i('picture')
+			.collection__details
+				.collection__head
+					.collection__box
+						.collection__user.h2 Cute Planet
+						.collection__line
+							.collection__category CUTE
+							.collection__code 0xE5A1....D0306
+								button.collection__copy
+									+i('copy')
+					button.button-stroke-grey.button-medium.collection__button
+						span edit
+						+i('edit')
+				.collection__list
+					.collection__item
+						.collection__label 
+							+i('profile-fat')
+							| NFTs
+						.collection__value.h4 0
+					.collection__item
+						.collection__label 
+							+i('profile-fat')
+							| Owners
+						.collection__value.h4 1
+					.collection__item
+						.collection__label 
+							+i('profile-fat')
+							| Floor price
+						.collection__value.h4 -
+					.collection__item
+						.collection__label 
+							+i('profile-fat')
+							| Total sales
+						.collection__value.h4 -
+				.collection__foot
+					.collection__stage Description
+					.collection__content We are laying the groundwork for web3 — the next generation of the internet full of limitless possibilities. Join the millions of creators, collectors, and curators who are on this journey.
+		.collection__col
+			// list
+			.list
+				.list__head
+					.list__nav
+						button.list__tab.active
+							span.list__title NFTs
+							span.list__counter 0
+						button.list__tab
+							span.list__title Activity
+							span.list__counter 0
+						button.list__tab
+							span.list__title Owners
+							span.list__counter 0
+				.list__wrapper
+					.list__item(style="display: block")
+						.collection__create
+							.collection__description
+								.collection__title.h4 Create your first NFT
+								.collection__text This collection is empty, get it started by minting your first artwork
+								a.button-white.button-large.collection__button(href="mint-nft.html")
+									span mint nft
+									+i('plus')
+							a.collection__link(href="blog-detail.html") How to mint an NFT?
+	

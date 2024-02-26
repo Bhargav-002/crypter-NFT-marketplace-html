@@ -1,0 +1,52 @@
+.actions
+    display: flex
+    &__sortings
+        display: flex
+        +m
+            display: none
+    &__sortings,
+    &__sorting,
+    &__theme
+        font-size: 0
+        &:not(:last-child)
+            margin-right: rem(12)
+    &__sorting,
+    &__filters,
+    &__theme
+        flex-shrink: 0
+        width: rem(48)
+        height: rem(48)
+        .icon
+            transition: fill .2s
+        &:not(:last-child)
+            margin-right: rem(12)
+    &__sorting,
+    &__filters
+        border-radius: 50%
+        transition: background .2s
+        .icon
+            fill: $n6
+            transition: fill .2s
+        &:hover,
+        &.active
+            .icon
+                fill: $n1
+        &.active
+            background: $n7
+    &__theme
+        .icon
+            fill: $n5
+            &-moon
+                display: none
+        &:hover
+            .icon
+                fill: $n1
+        &.active
+            .icon
+                &-sun
+                    display: none
+                &-moon
+                    display: inline-block
+            &:hover
+                .icon
+                    fill: $n8

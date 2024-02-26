@@ -1,0 +1,39 @@
+if headerEmpty
+	header.header.header_empty(class=headerClass)
+		+logo
+		include account
+else
+	header.header(class=headerClass)
+		.header__col
+			+logo
+			include search
+		.header__col
+			.header__discover
+				button.header__head DISCOVER
+					+i('arrow-down')
+				.header__body
+					.header__list
+						a.header__link(href="discover.html") Browse
+							+i('arrow-right-thin')
+						a.header__link(href="ranking.html") Ranking
+							+i('arrow-right-thin')
+			.header__navigation
+				a.header__link(href="discover.html") Discover
+				a.header__link(href="feed.html") Feed
+			a.button-stroke.button-medium.header__button.header__create(href="create.html")
+				span create
+				+i('plus')
+			a.button-stroke.button-medium.header__button.header__connect.js-popup-open(href="#popup-connect" data-effect="mfp-zoom-in") connect wallet
+			a.header__notification.active(href="notification.html")
+				+i('flash')
+			include account
+			a.header__burger.js-popup-open(href="#popup-menu" data-effect="mfp-zoom-in")
+.overlay
+include menu
+include connect
+
+
+
+
+
+

@@ -1,0 +1,66 @@
+.article
+    padding: rem(80)
+    +w
+        padding: rem(80) rem(40)
+    +t
+        padding: rem(64) rem(24)
+    +m
+        padding: rem(48) rem(24)
+    &__content
+        max-width: rem(960)
+        margin: 0 auto
+    &__content,
+    &__photo
+        &:not(:last-child)
+            margin-bottom: rem(120)
+            +w
+                margin-bottom: rem(80)
+            +t
+                margin-bottom: rem(64)
+
+    &__photo
+        border-radius: rem(24)
+        +m
+            margin: 0 rem(-24)
+            border-radius: 0
+        img
+            width: 100%
+            border-radius: rem(24)
+            +m
+                min-height: rem(300)
+                border-radius: 0
+                object-fit: cover
+    &__share
+        max-width: rem(960)
+        margin: 0 auto
+    &__info
+        margin-bottom: rem(32)
+        +button
+    &__socials
+        display: flex
+        margin: 0 rem(-10)
+    &__social
+        display: flex
+        justify-content: center
+        align-items: center
+        flex: 1 1 auto
+        height: rem(56)
+        margin: 0 rem(10)
+        background: $n2
+        border-radius: rem(4)
+        +caption
+        color: $n5
+        transition: background .2s, color .2s
+        +m
+            font-size: 0
+        .icon
+            margin-right: rem(8)
+            fill: $n5
+            transition: fill .2s
+            +m
+                margin: 0
+        &:hover
+            background: $n7
+            color: $n1
+            .icon
+                fill: $n1

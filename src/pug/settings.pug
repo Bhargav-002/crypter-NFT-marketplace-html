@@ -1,0 +1,124 @@
+---
+title: Crypter 2
+classLinkAccountSettings: active
+footerHide: true
+---
+extends layouts/layout
+block content
+	// settings
+	.settings
+		.settings__col
+			.settings__wrapper
+				.settings__head
+					.settings__title.h1 Settings
+					button.button-large.settings__button
+						span Save
+						+i('check')
+				.settings__menu
+					a.settings__link.h4(href="#profile") Profile
+						+i('arrow-right')
+					a.settings__link.h4(href="#wallet") Wallet
+						+i('arrow-right')
+					a.settings__link.h4(href="#notification") Notification
+						+i('arrow-right')
+				.settings__upload
+					.settings__preview
+						img(src="img/content/cute-planet-1.png" alt="")
+						button.settings__close
+							+i('close')
+					.settings__wrap
+						.settings__subtitle.h4 Profile photo
+						.settings__content We recommended an image of at least 800x800. Gifs work too.
+						.settings__file
+							input.settings__input(type="file")
+							button.button-stroke-grey.button-medium upload
+		.settings__col
+			.settings__section
+				.settings__anchor#profile
+				.settings__label information
+				.settings__fieldset
+					// field
+					.field.field_icon
+						.field__wrap
+							input.field__input(type="email" name="email" value="hello@crypter.net" required)
+							+i('email')
+						.field__label Email
+					// field
+					.field.field_icon
+						.field__wrap
+							input.field__input(type="text" name="name" value="Dash" required)
+							+i('profile')
+						.field__label Display name
+					// field
+					.field.field_icon.field_textarea
+						.field__wrap
+							textarea.field__textarea(name="about" placeholder="About you" required)
+							+i('list-open')
+						.field__label Short bio
+				.settings__label links
+				.settings__socials
+					// field
+					.field.field_icon
+						.field__wrap
+							input.field__input(type="text" name="website" value="https://crypter.net" required)
+							+i('link')
+						.field__label Website
+					// field
+					.field.field_icon
+						.field__wrap
+							input.field__input(type="text" name="twitter" value="https://twitter.com/crypter" required)
+							+i('twitter')
+						.field__label Twitter
+					// field
+					.field.field_icon
+						.field__wrap
+							input.field__input(type="text" name="facebook" value="https://facebook.com/crypter" required)
+							+i('facebook')
+						.field__label Facebook
+			.settings__section
+				.settings__anchor#wallet
+				.settings__label wallet
+				.settings__wallet
+					.settings__icon
+						img(src="img/content/etherium.jpg" alt="")
+					.settings__details
+						.settings__code
+							.desktop-hide 0x1e862Be555a66Ea69....533B
+							.desktop-show.mobile-hide 0x1e862Be5....533B
+							.mobile-show 0x1e...533B
+							button.settings__copy
+								+i('copy')
+						.settings__note Ethereum
+					a.button-circle.settings__exit(href="index.html")
+						+i('logout')
+				button.button-stroke-grey.button-wide.settings__button link wallet
+			.settings__section
+				.settings__anchor#notification
+				.settings__label notification
+				.settings__list
+					.settings__item
+						.settings__box
+							.settings__caption Auction notification
+							.settings__text Amet nesciunt voluptas quas cum sequi a pariatur harum.
+						+toggle
+					.settings__item
+						.settings__box
+							.settings__caption Buy now notification
+							.settings__text Dolorem vitae ratione aut assumenda accusamus.
+						+toggle(true)
+					.settings__item
+						.settings__box
+							.settings__caption Offer notification
+							.settings__text Qui nulla fuga omnis aperiam nostrum excepturi asperiores.
+						+toggle(true)
+					.settings__item
+						.settings__box
+							.settings__caption Crypter news
+							.settings__text Placeat quo qui cum ea nisi optio.
+						+toggle(true)
+
+
+
+
+
+			

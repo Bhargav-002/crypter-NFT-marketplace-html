@@ -1,0 +1,339 @@
+.create
+    display: flex
+    min-height: calc(100vh - rem(96))
+    +t
+        display: block
+        min-height: auto
+    &__col
+        flex: 0 0 50%
+        width: 50%
+        +t
+            width: 100%
+        &:nth-child(2)
+            padding: rem(80)
+            background: $n2
+            +xl
+                padding: rem(64)
+            +w
+                padding: rem(64) rem(40)
+            +d
+                padding: rem(40)
+            +t
+                padding: rem(40) rem(24)
+    &__wrap
+        position: sticky
+        top: 0
+        display: flex
+        flex-direction: column
+        min-height: calc(100vh - rem(96))
+        padding: rem(80)
+        +xl
+            padding: rem(64)
+        +w
+            padding: rem(64) rem(40)
+        +d
+            padding: rem(40)
+        +t
+            min-height: auto
+            padding: rem(40) rem(24)
+    &__wrap > &__title
+        margin-bottom: rem(64)
+        +w
+            margin-bottom: rem(40)
+    .arrow
+        margin-bottom: auto
+    &__content
+        max-width: rem(540)
+        margin-top: rem(40)
+        +body2
+        color: $n5
+        +w
+            +body2M
+        +t
+            max-width: 100%
+    &__head
+        display: flex
+        justify-content: space-between
+        align-items: center
+        margin-bottom: rem(48)
+        +w
+            margin-bottom: rem(24)
+    &__subtitle
+        +body1
+        color: $n5
+        +d
+            +body1M
+    &__col > &__subtitle
+        margin-bottom: rem(48)
+        +m
+            margin-bottom: rem(32)
+    &__counter
+        padding: rem(2) rem(12)
+        background: $n3
+        border-radius: rem(12)
+        +body2Bold
+    &__add
+        display: flex
+        flex-direction: column
+        justify-content: center
+        align-items: center
+        margin-bottom: rem(24)
+        padding: rem(56) rem(32)
+        background: $n1
+        border-radius: rem(20)
+        text-align: center
+        +shadow1
+        &:hover
+            .create__plus
+                background: $s2
+                &:before,
+                &:after
+                    background: $n1
+    &__add &__plus
+        position: relative
+        width: rem(96)
+        height: rem(96)
+        margin: 0 auto rem(32)
+        border-radius: rem(16)
+        background: $o3
+        transition: background .2s
+        &:before,
+        &:after
+            content: ""
+            position: absolute
+            top: 50%
+            left: 50%
+            transform: translate(-50%,-50%)
+            background: $n7
+            border-radius: rem(2)
+            transition: background .2s
+        &:before
+            width: rem(2)
+            height: rem(16)
+        &:after
+            width: rem(16)
+            height: rem(2)
+    &__add &__info
+        margin-bottom: rem(8)
+        +body1
+        color: $n7
+    &__add &__text
+        +baseMedium
+        color: $n5
+    &__box
+        display: flex
+        align-items: center
+        padding: rem(20)
+        border-radius: rem(20)
+        background: $n1
+        &:not(:last-child)
+            margin-bottom: rem(24)
+    &__preview
+        position: relative
+        display: flex
+        justify-content: center
+        align-items: center
+        flex-shrink: 0
+        width: rem(96)
+        height: rem(96)
+        margin-right: rem(32)
+        border-radius: rem(16)
+        background: $o3
+        +m
+            margin-right: rem(24)
+        .icon
+            width: rem(32)
+            height: rem(32)
+            fill: rgba($n4, .3)
+        img
+            +imageCover
+            border-radius: rem(16)
+    &__lines
+        display: flex
+        flex-direction: column
+        &:before,
+        &:after
+            content: ""
+            display: block
+            height: rem(12)
+            border-radius: rem(4)
+            background: $n3
+        &:before
+            width: rem(200)
+            margin-bottom: rem(12)
+            +m
+                width: rem(160)
+        &:after
+            width: rem(123)
+            +m
+                width: rem(100)
+    &__foot
+        margin-top: rem(44)
+        text-align: center
+        +w
+            margin-top: rem(24)
+    &__link
+        +body2Bold
+        color: $n5
+        transition: color .2s
+        +d
+            +base
+        &:hover
+            color: $n7
+    &__new,
+    &__collection
+        display: flex
+        align-items: center
+        margin-bottom: rem(24)
+        padding: rem(20)
+        background: $n1
+        border-radius: rem(20)
+    &__new
+        +body1
+        color: $n7
+        &:hover
+            .create__plus
+                background: $s2
+                &:before,
+                &:after
+                    background: $n1
+    &__new &__plus
+        position: relative
+        flex-shrink: 0
+        width: rem(96)
+        height: rem(96)
+        margin-right: rem(32)
+        border-radius: rem(16)
+        background: $o3
+        transition: background .2s
+        +m
+            margin-right: rem(24)
+        &:before,
+        &:after
+            content: ""
+            position: absolute
+            top: 50%
+            left: 50%
+            transform: translate(-50%,-50%)
+            background: $n7
+            border-radius: rem(2)
+            transition: background .2s
+        &:before
+            width: rem(2)
+            height: rem(16)
+        &:after
+            width: rem(16)
+            height: rem(2)
+    &__collection
+        transition: box-shadow .2s
+        &:hover
+            +shadow1
+        &:not(:last-child)
+            margin-bottom: rem(24)
+    &__caption
+        margin-bottom: rem(4)
+        +body1
+        color: $n7
+        +m
+            +body1M
+    &__price
+        +body2Bold
+        color: $n4
+        +m
+            +base
+    &__top
+        display: flex
+        justify-content: space-between
+        align-items: flex-start
+        margin-bottom: rem(32)
+        +m
+            margin-bottom: rem(16)
+    &__top &__title
+        +m
+            +h3S
+    &__back
+        margin-left: rem(32)
+    &__stage
+        max-width: rem(475)
+        margin-bottom: rem(64)
+        +body1
+        color: $n5
+        +w
+            margin-bottom: rem(32)
+        +m
+            margin-bottom: rem(24)
+            +body1M
+    &__form
+        display: flex
+        flex-direction: column
+        flex-grow: 1
+    .field
+        margin-bottom: rem(40)
+        +w
+            margin-bottom: rem(24)
+
+    &__form &__button
+        margin-top: auto
+        +m
+            margin-top: rem(16)
+    &__picture
+        position: relative
+        display: flex
+        justify-content: space-between
+        align-items: flex-start
+        height: rem(360)
+        margin-bottom: rem(32)
+        padding: rem(24)
+        border-radius: rem(20)
+        background: $o3
+        overflow: hidden
+        & > img
+            +imageCover
+            border-radius: rem(20)
+    &__image,
+    &__category
+        position: relative
+        z-index: 2
+        border-radius: rem(12)
+    &__image
+        width: rem(96)
+        height: rem(96)
+        background: rgba($n4, .3)
+        img
+            +imageCover
+            border-radius: rem(12)
+    &__category
+        min-width: rem(98)
+        min-height: rem(48)
+        padding: rem(8) rem(16)
+        background: $n1
+        +body1
+        &:empty
+            background: rgba($n4, .3)
+    &__bottom
+        display: flex
+        justify-content: space-between
+        align-items: center
+    &__name
+        margin-right: rem(20)
+        +d
+            +h4S
+        &:empty
+            width: rem(200)
+            height: rem(12)
+            border-radius: rem(4)
+            background: $n3
+    &__value
+        +title
+        color: $n4
+    &__note
+        max-width: rem(540)
+        margin-bottom: rem(56)
+        +body2
+        color: $n5
+        +d
+            +baseMedium
+        +t
+            max-width: 100%
+    &__wrap &__button
+        margin-top: auto

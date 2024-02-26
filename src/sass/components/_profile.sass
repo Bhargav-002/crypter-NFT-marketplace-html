@@ -1,0 +1,207 @@
+.profile
+    display: flex
+    min-height: calc(100vh - rem(400))
+    +xl
+        min-height: calc(100vh - rem(304))
+    +t
+        display: block
+    &__col
+        flex: 0 0 50%
+        width: 50%
+        +t
+            width: 100%
+        &:nth-child(1)
+            position: relative
+    &__col > &__avatar
+        position: absolute
+        top: rem(-144)
+        left: rem(68)
+        width: rem(224)
+        height: rem(224)
+        border: rem(12) solid rgba($n1, .25)
+        border-radius: 50%
+        +xl
+            left: rem(52)
+        +w
+            left: rem(28)
+        +t
+            top: rem(-108)
+            left: rem(12)
+            width: rem(184)
+            height: rem(184)
+    &__avatar
+        img
+            +imageCover
+            border-radius: 50%
+    &__details
+        position: sticky
+        top: 0
+        display: flex
+        flex-direction: column
+        min-height: rem(800)
+        padding: rem(100) rem(80) rem(80)
+        +xl
+            min-height: rem(720)
+            padding: rem(100) rem(64) rem(80)
+        +w
+            padding: rem(100) rem(40) rem(80)
+        +t
+            display: block
+            min-height: auto
+            padding: rem(100) rem(24) rem(48)
+        .follow
+            margin-top: rem(8)
+            padding: 0 rem(30)
+            +d
+                min-width: rem(88)
+                margin-top: 0
+                padding: 0 rem(12)
+                font-size: 0
+                .icon
+                    margin: 0
+            +t
+                min-width: auto
+                padding: 0 rem(30)
+                font-size: rem(12)
+                .icon
+                    margin-left: rem(12)
+            +m
+                margin-top: rem(32)
+    &__head
+        margin-bottom: auto
+    &__flex
+        display: flex
+        justify-content: space-between
+        margin-bottom: rem(40)
+        +m
+            display: block
+            margin-bottom: rem(32)
+    &__user
+        margin-bottom: rem(8)
+        +m
+            +h2M
+    &__line
+        display: flex
+        align-items: center
+    &__login
+        +body1
+        color: $n5
+        +d
+            +body1M
+    &__code
+        display: flex
+        align-items: center
+        margin-left: rem(20)
+        padding: rem(8) rem(12)
+        border-radius: rem(12)
+        background: $a2
+        +base
+        +d
+            +baseM
+    &__copy
+        margin-left: rem(8)
+        font-size: 0
+        .icon
+            width: rem(20)
+            height: rem(20)
+    &__actions
+        display: flex
+        margin: 0 rem(-20)
+        +m
+            justify-content: space-between
+            margin: 0
+    &__action
+        flex: 0 0 calc(33.333% - rem(40))
+        width: calc(33.333% - rem(40))
+        margin: 0 rem(20)
+        cursor: pointer
+        transition: color .2s
+        +m
+            flex: 0 0 auto
+            width: auto
+            margin: 0
+        &:hover,
+        &.active
+            color: $s2
+    &__counter
+        +d
+            +h4S
+    &__subtitle
+        display: flex
+        align-items: center
+        margin-top: rem(8)
+        +base
+        color: $n5
+        +d
+            +baseM
+        +m
+            +baseS
+        .icon
+            width: rem(20)
+            height: rem(20)
+            margin-right: rem(4)
+            fill: $n5
+            +m
+                width: rem(16)
+                height: rem(16)
+    &__contacts
+        display: flex
+        justify-content: space-between
+        align-items: flex-start
+        margin-top: rem(64)
+        +d
+            margin-top: rem(40)
+        +m
+            display: block
+            margin-top: rem(32)
+    &__description
+        max-width: rem(488)
+    &__item
+        &:not(:last-child)
+            margin-bottom: rem(40)
+    &__category
+        margin-bottom: rem(24)
+        +button
+        color: $n5
+    &__content
+        +baseMedium
+        color: $n5
+    &__links
+        display: flex
+        justify-content: space-between
+        align-items: center
+    &__link
+        display: flex
+        align-items: center
+        +base
+        color: $n7
+        transition: color .2s
+        .icon
+            margin-right: rem(16)
+            fill: $n7
+            transition: fill .2s
+        &:hover
+            color: $s2
+            .icon
+                fill: $s2
+    &__socials
+        display: flex
+        flex-direction: column
+        flex-shrink: 0
+        margin-left: rem(64)
+        +m
+            flex-direction: row
+            margin: rem(40) 0 0
+    &__social
+        .icon
+            fill: $n5
+            transition: fill .2s
+        &:hover
+            .icon
+                fill: $n8
+        &:not(:last-child)
+            margin-bottom: rem(24)
+            +m
+                margin: 0 rem(24) 0 0
+    .list
+        display: none

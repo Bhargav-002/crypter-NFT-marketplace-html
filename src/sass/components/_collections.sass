@@ -1,0 +1,106 @@
+.collections
+    position: relative
+    padding: rem(80) rem(80) rem(132)
+    overflow: hidden
+    +xl
+        padding: rem(64) rem(64) rem(152)
+    +w
+        padding: rem(64) rem(40) rem(152)
+    +d
+        padding: rem(40) rem(40) rem(96)
+    +t
+        padding: rem(48) rem(24) rem(96)
+    +m
+        padding-bottom: 0
+    &__title
+        margin-bottom: rem(64)
+        padding-right: rem(200)
+        +w
+            margin-bottom: rem(64)
+        +d
+            margin-bottom: rem(48)
+        +t
+            padding-right: rem(176)
+        +m
+            margin-bottom: rem(32)
+            padding-right: 0
+    &__wrapper
+        margin: 0 rem(-16)
+        +m
+            position: relative
+            padding: rem(100) 0 rem(96)
+    &__item
+        display: block
+        color: $n7
+        transition: color .2s
+        &:hover
+            color: $s2
+    &__images
+        display: flex
+        flex-wrap: wrap
+        margin: rem(-8) rem(-4) 0
+    &__image,
+    &__counter
+        flex: 0 0 calc(33.333% - rem(8))
+        width: calc(33.333% - rem(8))
+        margin: rem(8) rem(4) 0
+        &:nth-child(1)
+            flex: 0 0 calc(100% - rem(8))
+            width: calc(100% - rem(8))
+    &__image
+        position: relative
+        &:before
+            content: ""
+            display: block
+            padding-bottom: 100%
+        img
+            +imageCover
+            border-radius: rem(16)
+    &__counter
+        display: flex
+        justify-content: center
+        align-items: center
+        border-radius: rem(16)
+        background: #BCE6EC
+        +body1
+        color: $n7
+        +m
+            +body1M
+    &__details
+        display: flex
+        justify-content: space-between
+        align-items: center
+        margin-top: rem(24)
+    &__box
+        &:nth-child(2)
+            flex-shrink: 0
+            margin-left: rem(20)
+            text-align: right
+            +title
+    &__subtitle
+        margin-bottom: rem(4)
+        +body1
+        +d
+            margin-top: rem(8)
+            +body1M
+    &__author
+        display: flex
+        align-items: center
+        +title
+        color: $n7
+    &__avatar
+        position: relative
+        flex-shrink: 0
+        width: rem(32)
+        height: rem(32)
+        margin-right: rem(12)
+        img
+            +imageCover
+            border-radius: 50%
+    &__text
+        margin-bottom: rem(4)
+        color: $n5
+        +d
+            margin-bottom: 0
+    &__price
+        color: $n7

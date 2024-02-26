@@ -1,0 +1,172 @@
+---
+title: Crypter 2
+headerClass: header_noRegistration
+colorAuctions: "#DBFF73"
+classLinkMenuDiscover: active
+---
+extends layouts/layout
+block content
+	// discover
+	.discover#discover
+		// swiper
+		.swiper.swiper-discover
+			.swiper-wrapper
+				mixin discoverItem(image, title, avatar, login, data)
+					.swiper-slide
+						.discover__slide
+							img(src=image alt="")
+							.discover__row
+								.discover__details
+									.discover__head
+										.discover__title.h1=title
+										.discover__author
+											.discover__avatar
+												img(src=avatar alt="")
+											| @
+											=login
+									.discover__btns
+										a.button-stroke-white.discover__button(href="nft.html")
+											span View NFT
+											+i('arrow-right')
+										a.button-white.discover__button(href="place-a-bid.html") place a bid
+								.discover__box
+									.discover__info Auction ends in
+									// timer
+									ul.timer.js-timer(data-countdown=data)
+										li
+											span.timer__value.hours.h3
+											span.timer__text hours
+										li
+											span.timer__value.minutes.h3
+											span.timer__text minutes
+										li
+											span.timer__value.seconds.h3
+											span.timer__text seconds
+				+discoverItem("img/content/main-slide-1.jpg", "D-0-G", "img/content/artists/artist-1.jpg", "randomdash", "12/24/2028 23:08:19")
+				+discoverItem("img/content/main-slide-2.jpg", "Cute Dog", "img/content/artists/artist-2.jpg", "moyoshiro", "12/24/2028 19:29:39")
+				+discoverItem("img/content/main-slide-1.jpg", "D-0-G", "img/content/artists/artist-1.jpg", "randomdash", "12/24/2028 06:44:49")
+			button.swiper-button-prev
+			button.swiper-button-next
+	// catalog
+	.catalog
+		.catalog__sorting
+			.catalog__select
+				button.catalog__top
+					span.catalog__value
+						span.catalog__subtitle All
+					+i('arrow-down')
+				.catalog__tabs
+					a.catalog__tab.active(href="#discover")
+						span.catalog__subtitle All
+					a.catalog__tab(href="#nfts")
+						span.catalog__subtitle NFTs
+						span.catalog__counter 456,789
+					a.catalog__tab(href="#collections")
+						span.catalog__subtitle Collections
+						span.catalog__counter 123,987
+					a.catalog__tab(href="#artists")
+						span.catalog__subtitle Artist
+						span.catalog__counter 45,678
+			button.catalog__theme
+				+i('sun')
+				+i('moon')
+		.catalog__wrapper#nfts
+			.catalog__head
+				.catalog__title.h1 NFTs
+				// tabs
+				.tabs
+					a.tabs__button.active(href="#") 1 days
+					a.tabs__button(href="#") 7 days
+					a.tabs__button(href="#") 30 days
+				button.catalog__toggle
+					+i('filter-1')
+					+i('close')
+			include includes/filters
+			.catalog__list
+				+card("img/content/nfts/image-1.jpg", "img/content/collection/image-6.jpg", "ESCP", "The Currency", "img/content/artists/artist-1.jpg", "elnafrederick", true, "0.4321 ETH", "2.02 ETH")
+				+card("img/content/nfts/image-2.jpg", "img/content/collection/image-5.jpg", "ESCP", "The Currency", "img/content/artists/artist-2.jpg", "randomdash", true, "14.556 ETH", "34.22 ETH")
+				+card("img/content/nfts/image-3.jpg", "img/content/collection/image-4.jpg", "ESCP", "The Currency", "img/content/artists/artist-3.jpg", "gelo", false, "8.5627 ETH", "1.44 ETH")
+				+card("img/content/nfts/image-4.jpg", "img/content/collection/image-3.jpg", "ESCP", "The Currency", "img/content/artists/artist-4.jpg", "kohaku", true, "45.8676 ETH", "5.72 ETH")
+				+card("img/content/nfts/image-5.jpg", "img/content/collection/image-6.jpg", "ESCP", "The Currency", "img/content/artists/artist-1.jpg", "gelo", true, "0.4321 ETH", "12.02 ETH")
+				+card("img/content/nfts/image-6.jpg", "img/content/collection/image-5.jpg", "ESCP", "The Currency", "img/content/artists/artist-2.jpg", "elnafrederick", true, "14.556 ETH", "24.22 ETH")
+				+card("img/content/nfts/image-7.jpg", "img/content/collection/image-4.jpg", "ESCP", "The Currency", "img/content/artists/artist-3.jpg", "randomdash", false, "8.5627 ETH", "12.44 ETH")
+				+card("img/content/nfts/image-8.jpg", "img/content/collection/image-3.jpg", "ESCP", "The Currency", "img/content/artists/artist-4.jpg", "kohaku", true, "45.8676 ETH", "45.72 ETH")
+				+card("img/content/nfts/image-9.jpg", "img/content/collection/image-6.jpg", "ESCP", "The Currency", "img/content/artists/artist-1.jpg", "elnafrederick", true, "0.4321 ETH", "2.02 ETH")
+				+card("img/content/nfts/image-10.jpg", "img/content/collection/image-5.jpg", "ESCP", "The Currency", "img/content/artists/artist-2.jpg", "randomdash", true, "14.556 ETH", "34.22 ETH")
+				+card("img/content/nfts/image-11.jpg", "img/content/collection/image-4.jpg", "ESCP", "The Currency", "img/content/artists/artist-3.jpg", "gelo", false, "8.5627 ETH", "1.44 ETH")
+				+card("img/content/nfts/image-12.jpg", "img/content/collection/image-3.jpg", "ESCP", "The Currency", "img/content/artists/artist-4.jpg", "kohaku", true, "45.8676 ETH", "5.72 ETH")
+			.catalog__btns
+				button.button-stroke.button-medium.catalog__button load more
+	include includes/auctions
+	// most
+	.most#collections
+		.most__head
+			.most__title.h1 Most activity collections
+			// tabs
+			.tabs
+				a.tabs__button.active(href="#") 1 days
+				a.tabs__button(href="#") 7 days
+				a.tabs__button(href="#") 30 days
+		.most__collections
+			mixin mostCollection(image1, image2, image3, color, counter, title, avatar, login, price)
+				a.most__collection(href="collection.html")
+					.most__images
+						.most__image
+							img(src=image1 alt="")
+						.most__image
+							img(src=image2 alt="")
+						.most__image
+							img(src=image3 alt="")
+						.most__image
+							.most__counter(style="background-color:" + color)=counter
+					.most__details
+						.most__box
+							.most__subtitle.h4=title
+							.most__author
+								.most__avatar
+									img(src=avatar alt="")
+								| @
+								=login
+						.most__box
+							.most__text Floor price
+							.most__price.h4=price
+			+mostCollection("img/content/collection/photo-1.jpg", "img/content/collection/photo-2.jpg", "img/content/collection/photo-3.jpg", "#BCE6EC", "+4", "Cute Robot", "img/content/artists/artist-1.jpg", "tranmautritam", "1.0 ETH")
+			+mostCollection("img/content/collection/photo-4.jpg", "img/content/collection/photo-5.jpg", "img/content/collection/photo-6.jpg", "#B9A9FB", "+12", "Cute Planet", "img/content/artists/artist-2.jpg", "moyoshiro", "2.8 ETH")
+			+mostCollection("img/content/collection/photo-7.jpg", "img/content/collection/photo-8.jpg", "img/content/collection/photo-9.jpg", "#DBFF73", "+22", "Cute Robot", "img/content/artists/artist-3.jpg", "tranmautritam", "5.5 ETH")
+			+mostCollection("img/content/collection/photo-10.jpg", "img/content/collection/photo-11.jpg", "img/content/collection/photo-12.jpg", "#FFA6D6", "+6", "Cute Planet", "img/content/artists/artist-4.jpg", "moyoshiro", "2.2 ETH")
+			+mostCollection("img/content/collection/photo-13.jpg", "img/content/collection/photo-14.jpg", "img/content/collection/photo-15.jpg", "#BCE6EC", "+7", "Cute Robot", "img/content/artists/artist-5.jpg", "tranmautritam", "10.0 ETH")
+			+mostCollection("img/content/collection/photo-16.jpg", "img/content/collection/photo-17.jpg", "img/content/collection/photo-18.jpg", "#B9A9FB", "+10", "Cute Planet", "img/content/artists/artist-1.jpg", "moyoshiro", "2.8 ETH")
+	// artists
+	.artists#artists
+		.artists__col
+			.artists__wrap
+				.artists__head
+					.artists__title.h1 Hot NFT artists of the month.
+					a.artists__link(href="ranking.html")
+						+i('arrow-right')
+				.artists__content We are laying the groundwork for web3 — the next generation of the internet full of limitless possibilities. Join the millions of creators, collectors, and curators who are on this journey with you.
+		.artists__col
+			.artists__list
+				mixin artistsItem(avatar, login, price)
+					.artists__item
+						.artists__avatar
+							img(src=avatar alt="")
+						.artists__details
+							.artists__login @
+								=login
+							.artists__price Total sale 
+								span=price
+						button.button-stroke.button-medium.artists__follow Follow<span>ing</span>
+				+artistsItem("img/content/artists/artist-1.jpg", "randomdash", "12.29 ETH")
+				+artistsItem("img/content/artists/artist-6.jpg", "kohaku", "3.33 ETH")
+				+artistsItem("img/content/artists/artist-3.jpg", "tranmautritam", "34.56 ETH")
+				+artistsItem("img/content/artists/artist-4.jpg", "moyoshiro", "9.88 ETH")
+				+artistsItem("img/content/artists/artist-5.jpg", "foxies", "75.11 ETH")
+			button.button-wide.artists__button LOAD MORE
+	include includes/newsletter
+
+
+
+
+
+

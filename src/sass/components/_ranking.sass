@@ -1,0 +1,237 @@
+.ranking
+    display: flex
+    +t
+        display: block
+    &__col
+        flex: 0 0 50%
+        width: 50%
+        +t
+            width: 100%
+        &:nth-child(2)
+            // height: calc(100vh - rem(96))
+            padding: rem(80) rem(80) 0
+            overflow: auto
+            background: $n2
+            +xl
+                padding: rem(64) rem(64) 0
+            +w
+                padding: rem(64) rem(40) 0
+            +d
+                padding: rem(40) rem(40) 0
+            +t
+                padding: rem(48) rem(24)
+    &__wrap
+        position: sticky
+        top: 0
+        display: flex
+        flex-direction: column
+        justify-content: space-between
+        align-items: flex-start
+        height: calc(100vh - rem(96))
+        padding: rem(70) rem(80) rem(80)
+        +xl
+            padding: rem(64)
+        +w
+            padding: rem(64) rem(40)
+        +d
+            padding: rem(40)
+        +t
+            height: auto
+            padding: rem(24)
+    &__title
+        color: $n5
+        +t
+            margin-bottom: rem(24)
+        +m
+            +h1S
+        span
+            color: $n7
+            &:nth-child(1)
+                background: linear-gradient(to top, transparent 0,  transparent rem(24), #DBFF73 rem(24), #DBFF73 rem(40), transparent rem(40), transparent 100%)
+                +xl
+                    background: linear-gradient(to top, transparent 0,  transparent rem(18), #DBFF73 rem(18), #DBFF73 rem(34), transparent rem(34), transparent 100%)
+                +d
+                    background: linear-gradient(to top, transparent 0,  transparent rem(14), #DBFF73 rem(14), #DBFF73 rem(28), transparent rem(28), transparent 100%)
+                +m
+                    background: linear-gradient(to top, transparent 0,  transparent rem(12), #DBFF73 rem(12), #DBFF73 rem(24), transparent rem(24), transparent 100%)
+            &:last-child
+                padding-right: rem(10)
+                background: linear-gradient(to top, transparent 0,  transparent rem(24), #BCE6EC rem(24), #BCE6EC rem(40), transparent rem(40), transparent 100%)
+                +xl
+                    background: linear-gradient(to top, transparent 0,  transparent rem(18), #BCE6EC rem(18), #BCE6EC rem(34), transparent rem(34), transparent 100%)
+                +d
+                    background: linear-gradient(to top, transparent 0,  transparent rem(14), #BCE6EC rem(14), #BCE6EC rem(28), transparent rem(28), transparent 100%)
+                +m
+                    padding-right: rem(5)
+                    background: linear-gradient(to top, transparent 0,  transparent rem(12), #BCE6EC rem(12), #BCE6EC rem(24), transparent rem(24), transparent 100%)
+    &__content
+        max-width: rem(505)
+        +body2
+    &__sorting
+        display: flex
+        justify-content: space-between
+        margin-bottom: rem(56)
+        +w
+            justify-content: stretch
+            margin: 0 rem(-40) rem(56)
+            -webkit-overflow-scrolling: touch
+            overflow: auto
+            scrollbar-width: none
+            -ms-overflow-style: none
+            &::-webkit-scrollbar
+                display: none
+                width: 0
+                height: 0
+            &:before,
+            &:after
+                content: ""
+                display: block
+                flex-shrink: 0
+                width: rem(40)
+        +t
+            margin: 0 rem(-24) rem(40)
+            &:before,
+            &:after
+                width: rem(24)
+        .tabs
+            flex-shrink: 0
+            &_artists
+                margin-right: auto
+            &_sorting
+                margin-left: rem(12)
+    &__head
+        display: flex
+        margin-bottom: rem(16)
+        +d
+            margin-bottom: 0
+    &__caption
+        +base
+        color: $n5
+        &:nth-child(1)
+            flex-shrink: 0
+            width: rem(40)
+            text-align: center
+            +d
+                display: none
+            +m
+                display: block
+        &:nth-child(2)
+            flex-grow: 1
+            padding: 0 rem(24) 0 rem(60)
+            +w
+                padding: 0 rem(16) 0 rem(24)
+            +d
+                padding-left: 0
+            +m
+                padding: 0 0 0 rem(20)
+        &:nth-child(3)
+            flex-shrink: 0
+            width: rem(120)
+            text-align: right
+            +m
+                display: none
+    &__artists
+        height: calc(100vh - rem(312))
+        margin: 0 rem(-80)
+        padding-bottom: rem(40)
+        overflow: auto
+        -webkit-overflow-scrolling: touch
+        +xl
+            height: calc(100vh - rem(296))
+            margin: 0 rem(-64)
+        +w
+            margin: 0 rem(-40)
+        +d
+            height: calc(100vh - rem(256))
+        +t
+            height: auto
+            overflow: visible
+            margin: 0 rem(-24)
+            padding-bottom: 0
+        &::-webkit-scrollbar
+            width: rem(8)
+        &::-webkit-scrollbar-track
+            background-color: $n3
+            border: rem(2) solid $n3
+            border-radius: rem(4)
+        &::-webkit-scrollbar-thumb
+            background-color: $n6
+            border: rem(2) solid $n3
+            border-radius: rem(4)
+    &__item
+        display: flex
+        align-items: center
+        padding: rem(40) rem(72) rem(40) rem(80)
+        border-bottom: rem(1) solid $n3
+        transition: box-shadow .2s, background .2s
+        +xl
+            padding: rem(40) rem(56) rem(40) rem(64)
+        +w
+            padding: rem(40) rem(32) rem(40) rem(40)
+        +t
+            padding: rem(32) rem(24)
+        &:hover
+            background: $n1
+            +shadow1
+    &__number
+        flex-shrink: 0
+        filter: drop-shadow(0 rem(8) rem(8) rgba(0, 0, 0, 0.06))
+        +d
+            display: none
+        +m
+            display: block
+    &__inner
+        display: flex
+        justify-content: center
+        align-items: center
+        width: rem(40)
+        height: rem(40)
+        clip-path: url(#polygonNumber)
+        background: $n1
+        +base
+        color: $n7
+    &__artist
+        display: flex
+        align-items: center
+        flex-grow: 1
+        padding: 0 rem(24) 0 rem(60)
+        +w
+            padding: 0 rem(16) 0 rem(24)
+        +d
+            padding-left: 0
+        +m
+            padding: 0 0 0 rem(20)
+    &__avatar
+        position: relative
+        flex-shrink: 0
+        width: rem(80)
+        height: rem(80)
+        margin-right: rem(24)
+        +m
+            width: rem(64)
+            height: rem(64)
+            margin-right: rem(20)
+        img
+            +imageCover
+            border-radius: 50%
+    &__name,
+    &__crypto
+        margin-bottom: rem(4)
+        +body1
+        color: $n7
+    &__sale,
+    &__price
+        +base
+        color: $n5
+        span
+            color: $n7
+    &__info
+        flex-shrink: 0
+        width: rem(120)
+        text-align: right
+        +m
+            display: none
+
+
+
+

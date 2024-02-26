@@ -1,0 +1,135 @@
+---
+title: Crypter 2
+headerClass: header_light
+footerHide: true
+---
+extends layouts/layout
+block content
+	// background
+	.background
+		img(src="img/content/background-2.jpg" alt="")
+	// collection
+	.collection
+		.collection__col
+			.collection__photo
+				img(src="img/content/cute-planet-1.png" alt="")
+			.collection__details
+				.collection__head
+					.collection__box
+						.collection__user.h2 Cute Planet
+						.collection__line
+							.collection__category CUTE
+							.collection__code 0xE5A1....D0306
+								button.collection__copy
+									+i('copy')
+					button.button-stroke-grey.button-medium.collection__button
+						span edit
+						+i('edit')
+				.collection__list
+					.collection__item
+						.collection__label 
+							+i('profile-fat')
+							| NFTs
+						.collection__value.h4 35
+					.collection__item
+						.collection__label 
+							+i('profile-fat')
+							| Owners
+						.collection__value.h4 5
+					.collection__item
+						.collection__label 
+							+i('profile-fat')
+							| Floor price
+						.collection__value.h4 -
+					.collection__item
+						.collection__label 
+							+i('profile-fat')
+							| Total sales
+						.collection__value.h4 -
+				.collection__foot
+					.collection__stage Description
+					.collection__content We are laying the groundwork for web3 — the next generation of the internet full of limitless possibilities. Join the millions of creators, collectors, and curators who are on this journey.
+		.collection__col
+			// list
+			.list
+				.list__head
+					.list__nav
+						button.list__tab.active
+							span.list__title NFTs
+							span.list__counter 35
+						button.list__tab
+							span.list__title Activity
+							span.list__counter 5
+						button.list__tab
+							span.list__title Owners
+							span.list__counter 16
+				.list__wrapper
+					.list__group
+						.list__item(style="display: block")
+							// tokens
+							.tokens
+								.tokens__head
+									// users
+									.users.users_border
+										.users__title Owned by
+										.users__group
+											.users__item
+												img(src="img/content/users/avatar-1.jpg" alt="")
+									// actions
+									.actions
+										.actions__sortings
+											button.actions__sorting
+												+i('list')
+											button.actions__sorting.active
+												+i('grid')
+										//- button.actions__filters
+										//- 	+i('filter')
+										button.actions__theme
+											+i('sun')
+											+i('moon')
+								.tokens__group
+									+tokensItem("img/content/tokens/token-2.jpg", "The Explorer", "12.29 ETH")
+									+tokensItem("img/content/tokens/token-1.jpg", "Escape II", "2.44 ETH")
+									+tokensItem("img/content/tokens/token-3.jpg", "Escape", "22.33 ETH")
+									+tokensItem("img/content/tokens/token-4.jpg", "The Explorer", "12.29 ETH")
+									+tokensItem("img/content/tokens/token-5.jpg", "Escape I", "10.09 ETH")
+									+tokensItem("img/content/tokens/token-6.jpg", "The Explorer", "55.55 ETH")
+									+tokensItem("img/content/tokens/token-7.jpg", "The Explorer", "12.29 ETH")
+									+tokensItem("img/content/tokens/token-8.jpg", "Escape", "9.08 ETH")
+								+spinner
+						.list__item
+							// activity
+							.activity
+								.activity__table
+									.activity__row
+										.activity__col NFT
+										.activity__col From
+										.activity__col To
+										.activity__col Price
+									mixin activityRow(image, fromAvatar, fromLogin, toAvatar, toLogin, price)
+										.activity__row
+											.activity__col
+												.activity__preview
+													img(src=image alt="")
+											.activity__col
+												.activity__user
+													.activity__avatar
+														img(src=fromAvatar alt="")
+													.activity__login @
+														=fromLogin
+											.activity__col
+												.activity__user
+													.activity__avatar
+														img(src=toAvatar alt="")
+													.activity__login @
+														=toLogin
+											.activity__col=price
+									+activityRow("img/content/nfts/image-6.jpg", "img/content/artists/artist-1.jpg", "kohaku", "img/content/artists/artist-2.jpg", "randomdash", "1.0 ETH")
+									+activityRow("img/content/nfts/image-1.jpg", "img/content/artists/artist-3.jpg", "tranmautritam", "img/content/artists/artist-4.jpg", "moyoshiro", "4.4 ETH")
+									+activityRow("img/content/nfts/image-3.jpg", "img/content/artists/artist-5.jpg", "kohaku", "img/content/artists/artist-6.jpg", "randomdash", "12.44 ETH")
+									+activityRow("img/content/nfts/image-4.jpg", "img/content/artists/artist-1.jpg", "kohaku", "img/content/artists/artist-2.jpg", "randomdash", "9.22 ETH")
+									+activityRow("img/content/nfts/image-5.jpg", "img/content/artists/artist-3.jpg", "tranmautritam", "img/content/artists/artist-4.jpg", "moyoshiro", "6.17 ETH")
+						.list__item
+							include includes/owners
+					.list__foot
+						a.list__link(href="blog-detail.html") How to mint an NFT?

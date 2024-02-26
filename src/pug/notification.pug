@@ -1,0 +1,120 @@
+---
+title: Crypter 2
+footerHide: true
+---
+extends layouts/layout
+block content
+	// notification
+	.notification
+		.notification__col
+			// list
+			.list
+				.list__head
+					.list__nav
+						button.list__tab.active
+							span.list__title Notification
+							span.list__counter 24
+						button.list__tab
+							span.list__title Activity
+							span.list__counter 0
+				.list__wrapper
+					.list__item(style="display: block")
+						// notifications
+						.notifications
+							.notifications__title.h3 Notification
+							.notifications__list
+								.notifications__box
+									.notifications__month August 2022
+									.notifications__group
+										mixin notificationsItem(image, login, content, date, classFollow)
+											.notifications__item
+												.notifications__avatar
+													img(src=image alt="")
+												.notifications__details
+													.notifications__content
+														span @
+															=login
+														=content
+													.notifications__date=date
+												+follow(classFollow)
+										+notificationsItem("img/content/artists/artist-1.jpg", "randomdash", "followed you", "Aug 27", false)
+										+notificationsItem("img/content/artists/artist-2.jpg", "moyoshiro", "followed you", "Aug 24", "active")
+										+notificationsItem("img/content/artists/artist-3.jpg", "randomdash", "followed you", "Aug 20", false)
+										+notificationsItem("img/content/artists/artist-4.jpg", "tranmautritam", "followed you", "Aug 17", "active")
+										+notificationsItem("img/content/artists/artist-5.jpg", "randomdash", "followed you", "Aug 12", false)
+								.notifications__box
+									.notifications__month July 2022
+									.notifications__group
+										+notificationsItem("img/content/artists/artist-1.jpg", "randomdash", "followed you", "Jul 27", false)
+										+notificationsItem("img/content/artists/artist-2.jpg", "moyoshiro", "followed you", "Jul 24", "active")
+										+notificationsItem("img/content/artists/artist-3.jpg", "randomdash", "followed you", "Jul 20", "active")
+										+notificationsItem("img/content/artists/artist-4.jpg", "tranmautritam", "followed you", "Jul 17", "active")
+										+notificationsItem("img/content/artists/artist-5.jpg", "randomdash", "followed you", "Jul 12", false)
+							+spinner
+					.list__item
+						// offer
+						.offer
+							.offer__title.h3 1 Offer
+							.offer__box
+								.offer__user
+									.offer__avatar
+										img(src="img/content/artists/artist-1.jpg" alt="")
+									.offer__details
+										.offer__line
+											.offer__text Received from
+											.offer__code x456...8jh7
+										.offer__login @randomdash
+								.offer__subtitle Offer price
+								.offer__list
+									.offer__item
+										.offer__price.h3 1.00
+										.offer__price.h3 ETH
+									.offer__item
+										.offer__label Crypter fee
+										.offer__value 0.0055 ETH
+									.offer__item
+										.offer__label Total receive
+										.offer__percent 2%
+										.offer__value 0.9945 ETH
+								button.button-white.button-wide.button-large.offer__button Accept offer
+		.notification__col
+			// filters
+			.notification__filters
+				.notification__title.h4 Filters
+				.notification__list
+					+checkbox("Sales", false)
+					+checkbox("Followers", true)
+					+checkbox("Listings", false)
+					+checkbox("Mint", true)
+					+checkbox("Bids", false)
+					+checkbox("Purchase", false)
+					+checkbox("Burns", false)
+					+checkbox("Transfers", false)
+				.notification__btns
+					button.button-stroke-grey.button-medium.notification__button select all
+					button.button-stroke-grey.button-medium.notification__button deselect all
+			// preview
+			.notification__preview
+				.notification__image
+					img(src="img/content/main-pic-1.jpg" alt="")
+				.notification__head
+					.notification__title.h3 Escape
+					ul.timer.js-timer(data-countdown="12/24/2028 19:29:59")
+						li
+							span.timer__value.hours.h3
+							span.timer__text h
+						li
+							span.timer__value.minutes.h3
+							span.timer__text m
+				.notification__foot
+					.notification__item
+						.notification__photo
+							img(src="img/content/cute-planet.jpg" alt="")
+						.notification__details
+							.notification__subtitle Cute Planet
+							.notification__crypto 12 NFTs
+					.notification__lines
+						span
+						span
+
+			

@@ -1,0 +1,32 @@
+// popup
+.popup.popup_menu.mfp-hide#popup-menu
+	// menu
+	.menu
+		.menu__col
+			.menu__title.h1 Join our community
+			.menu__socials
+				a.menu__social(href="https://www.instagram.com/crypternet/" target="_blank")
+					+i('instagram-fat')
+				a.menu__social(href="https://twitter.com/crypter" target="_blank")
+					+i('twitter-fat')
+				a.menu__social(href="https://www.facebook.com/crypter.net/" target="_blank")
+					+i('twitter-fat')
+				a.menu__social(href="https://www.linkedin.com/company/crypter" target="_blank")
+					+i('linkedin-fat')
+		.menu__col
+			include search
+			.menu__list
+				+link(classLinkMenuDiscover, "discover.html", "Discover")
+				+link(classLinkMenuCreate, "create.html", "Create")
+				+link(classLinkMenuFeed, "feed.html", "Feed")
+				+link(classLinkMenuHelpCenter, "help.html", "Help center")
+				+link(classLinkMenuBlog, "blog.html", "Blog")
+			.menu__info.h4 Download app
+			.menu__btns
+				a.button.menu__button(href="https://crypter.net/" target="_blank")
+					span apple store
+					+i('apple')
+				a.button-white.menu__button(href="https://crypter.net/" target="_blank")
+					span google play
+					+i('google-play')
+

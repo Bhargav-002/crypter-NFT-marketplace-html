@@ -1,0 +1,163 @@
+---
+title: Crypter 2
+headerHide: true
+footerHide: true
+---
+extends layouts/layout
+block content
+	// details
+	.details.details_set
+		// exit
+		.details-exit
+			.details-exit__top
+				a.details-exit__button(href="index.html")
+					+i('close-fat')
+					span Exit preview mode
+		.details__row
+			.details__col
+				// preview
+				.details-preview
+					img(src="img/content/main-pic-1.jpg" alt="")
+					.details-preview__actions
+						button.details-preview__action
+							+i('music')
+						button.details-preview__action
+							+i('full-view')
+				// statistics
+				.details__box.details-statistics
+					.details-statistics__list
+						.details-statistics__item
+							.details-statistics__label Created by
+							.details-statistics__flex
+								.details-statistics__avatar.history
+									img(src="img/content/avatar.jpg" alt="")
+								.details-statistics__wrap
+									.details-statistics__title Dash
+									.details-statistics__login @randomdash
+						.details-statistics__item
+							.details-statistics__label Collection
+							.details-statistics__flex
+								.details-statistics__image
+									img(src="img/content/balls.jpg" alt="")
+								.details-statistics__wrap
+									.details-statistics__title Escape
+									.details-statistics__category Cute
+				.details__box
+					.details__stage.h4 Details
+					.details__content
+						p We are laying the groundwork for web3 — the next generation of the internet full of limitless possibilities. Join the millions of creators, collectors, and curators who are on this journey with you.
+					// links
+					.details-links
+						a.details-links__link(href="https://crypter.net/" target="_blank")
+							+i('country')
+							| View on Etherscane
+						a.details-links__link(href="https://crypter.net/" target="_blank")
+							+i('link')
+							| View metadata
+						a.details-links__link(href="https://crypter.net/" target="_blank")
+							+i('link')
+							| View on IPFS
+					button.button-stroke-grey.button-medium.details__button
+						span Add tags
+						+i('plus')
+				.details__box
+					.details__stage.h4 Provenance
+					// provenance
+					.details-provenance
+						.details-provenance__list
+							.details-provenance__item
+								.details-provenance__avatar.history
+									img(src="img/content/avatar.jpg" alt="")
+								.details-provenance__details
+									.details-provenance__content  Minted by <span>@randomdash</span>
+									.details-provenance__date Aug 18, 2022 at 18:80
+								a.details-provenance__link(href="https://crypter.net/" target="_blank")
+									+i('external-link')
+			.details__col
+				.details__wrap
+					// caption
+					.details-caption
+						.details-caption__line
+							.details-caption__title.h2 Escape
+							.details-caption__actions
+								button.button-circle.button-medium.details-caption__button
+									+i('dots')
+								a.button-circle.button-medium.details-caption__button(href="https://crypter.net/" target="_blank")
+									+i('share')
+						.details-caption__date
+							+i('external-link')
+							| Minted on Aug 18, 2022
+					.details__group.details__group_mb
+						// head
+						.details-head(style="display: none;")
+							.details-head__top
+								.details-head__title.h3 Set a Buy Now price
+								button.button-circle.button-medium.details-head__close
+									+i('close-fat')
+							.details-head__content
+								p Buyers will be able to instantly buy the NFT.
+								p You may edit this price at any time.
+							a.details-head__link(href="blog-detail.html") Learn how Buy Now price work
+						// head
+						.details-head(style="display: none;")
+							.details-head__top
+								.details-head__title.h3 Set a Reserve price
+								button.button-circle.button-medium.details-head__close
+									+i('close-fat')
+							.details-head__content
+								p Buyers will be able to instantly buy the NFT.
+								p You may edit this price at any time.
+							a.details-head__link(href="blog-detail.html") Learn how Reserve price work
+					// set price
+					.details-set
+						.details-set__row
+							.details-set__col
+								.details-set__label Buy now
+								.details-set__value.h4 -
+								button.button-medium.button-wide.details-set__button set buy now price
+							.details-set__col
+								.details-set__label Reserve
+								.details-set__value.h4 -
+								button.button-stroke-grey.button-medium.button-wide.details-set__button set reserve price
+					.details__group
+						// price
+						.price(style="display: none;")
+							.price__body
+								.price__title Buy now price
+								.price__wrap
+									.price__box
+										.field.field_large
+											.field__wrap
+												input.field__input(type="price" name="buy" placeholder="0.00")
+										.price__currency.h3 ETH
+									.price__line
+										.price__label Crypter fee
+										.price__value 0.00 ETH
+									.price__line
+										.price__label Total receive
+										.price__percent 2%
+										.price__value 0.00 ETH
+								button.button-large.button-wide.price__button set price
+							.price__content We are laying the groundwork for web3 — the next generation of the internet full of limitless possibilities. Join the millions of creators, collectors, and curators who are on this journey with you.
+						// price
+						.price(style="display: none;")
+							.price__body
+								.price__title Reserve price
+								.price__wrap
+									.price__box
+										.field.field_large
+											.field__wrap
+												input.field__input(type="price" name="buy" placeholder="0.00")
+										.price__currency.h3 ETH
+									.price__line
+										.price__label Crypter fee
+										.price__value 0.00 ETH
+									.price__line
+										.price__label Total receive
+										.price__percent 2%
+										.price__value 0.00 ETH
+								button.button-large.button-wide.price__button set price
+							.price__content We are laying the groundwork for web3 — the next generation of the internet full of limitless possibilities. Join the millions of creators, collectors, and curators who are on this journey with you.
+
+
+

@@ -1,0 +1,36 @@
+---
+title: Crypter 2
+headerEmpty: true
+footerHide: true
+---
+extends layouts/layout
+block content
+	// create
+	.create
+		.create__col
+			.create__wrap
+				.create__title.h1 Create on <br>Crypter.
+				+arrow
+				.create__content We are laying the groundwork for web3 — the next generation of the internet full of limitless possibilities. Join the millions of creators, collectors, and curators who are on this journey with you.
+		.create__col
+			.create__head 
+				.create__subtitle Your collection
+				.create__counter 2
+			a.create__new(href="create-step-1.html")
+				.create__plus
+				| Create new collection
+			.create__list
+				a.create__collection(href="collection.html")
+					.create__preview
+						img(src="img/content/cute-planet.jpg" alt="")
+					.create__details
+						.create__caption Cute Planet
+						.create__price 4 NFT
+				a.create__collection(href="collection.html")
+					.create__preview
+						img(src="img/content/escape.jpg" alt="")
+					.create__details
+						.create__caption Escape
+						.create__price 12 NFT
+			.create__foot
+				a.create__link(href="blog-detail.html") Learn about Collection on Crypter

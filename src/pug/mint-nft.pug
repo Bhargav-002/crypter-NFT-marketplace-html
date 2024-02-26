@@ -1,0 +1,60 @@
+---
+title: Crypter 2
+headerEmpty: true
+footerHide: true
+---
+extends layouts/layout
+block content
+	// mint
+	.mint
+		.mint__col
+			.mint__wrap
+				form.mint__form
+					.mint__head
+						.mint__title.h1 Mint NFT
+						a.button-circle.mint__back(href="index.html")
+							+i('arrow-left')
+					.mint__info Deploy a smart contract to showcase a series of NFT artworks.
+					.field.field_icon.field_large
+						.field__wrap
+							input.field__input(type="text" name="title" placeholder="NFT title" required)
+							+i('edit')
+					.field.field_icon.field_large.field_textarea
+						.field__wrap
+							textarea.field__textarea(name="description" placeholder="Description" required)
+							+i('edit')
+					.mint__box
+						.mint__category Collection
+						.mint__collection
+							.mint__preview
+								img(src="img/content/balls.jpg" alt="")
+							.mint__details
+								.mint__subtitle Escape
+								.mint__price 12 NFTs
+							.mint__check
+								+i('check')
+					.mint__btns
+						a.button-stroke-grey.button-large.mint__button(href="mint-nft-preview-mode.html") Preview
+						a.button-large.mint__button(href="mint-nft-congrats.html")
+							span Mint
+							+i('arrow-right')
+		.mint__col
+			// upload
+			.upload
+				.upload__stage.h3 Upload your NFT
+				.upload__file
+					input.upload__input(type="file")
+					.upload__details
+						.upload__icon
+							+i('upload')
+						.upload__info Drag and drop to upload your NFT
+						.upload__format JPG, PNG, MP4. Max 50Mb
+				.upload__title.h3
+				.upload__item
+					.upload__preview
+					.upload__wrap
+						.upload__subtitle
+						.upload__price
+					.upload__lines
+
+			

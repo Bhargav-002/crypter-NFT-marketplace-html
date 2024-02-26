@@ -1,0 +1,70 @@
+.field
+    &__wrap
+        position: relative
+    &__input,
+    &__textarea
+        width: 100%
+        border-width: 0 0 rem(1)
+        border-style: solid
+        border-color: $n3
+        background: transparent
+        border-radius: 0
+        +body2Bold
+        color: $n7
+        transition: border-color .2s
+        &::placeholder
+            color: $n7
+        &:focus
+            border-color: $s2
+    &__input
+        height: rem(64)
+        padding: 0
+    &__textarea
+        height: rem(152)
+        padding: rem(16) 0
+        resize: none
+    .icon
+        position: absolute
+        top: 50%
+        right: 0
+        transform: translateY(-50%)
+        pointer-events: none
+        fill: $n5
+    &__label
+        margin-top: rem(4)
+        +captionBold
+        color: $n4
+    &_icon
+        .field__input,
+        .field__textarea
+            padding-right: rem(40)
+    &_textarea
+        font-size: 0
+        .icon
+            top: rem(16)
+            transform: translateY(0)
+    &_light
+        .field__input,
+        .field__textarea
+            border-color: $n6
+            color: $n1
+            &::placeholder
+                color: $n1
+            &:focus
+                border-color: $n1
+    &_large
+        .field__input
+            height: rem(96)
+            +m
+                height: rem(72)
+        .field__textarea
+            height: rem(212)
+            padding: rem(32) rem(32) rem(24) 0
+            +m
+                height: rem(160)
+                padding: rem(16) rem(32) rem(16) 0
+        &.field_textarea
+            .icon
+                top: rem(34)
+                +m
+                    top: rem(18)

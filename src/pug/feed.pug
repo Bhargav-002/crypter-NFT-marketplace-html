@@ -1,0 +1,221 @@
+---
+title: Crypter 2
+classLinkMenuFeed: active
+---
+extends layouts/layout
+block content
+	// feed
+	.feed
+		.feed__row
+			.feed__details
+				h1.feed__title.hero Curated <br>Artwork.
+				+arrow("#DBFF73")
+			.feed__box
+				.feed__info.h4 Price from
+				.feed__price.h2 1.00 ETH
+		.feed__wrapper
+			// swiper
+			.swiper.swiper-tokens
+				.swiper-wrapper
+					mixin feedSlide(image, color, photo, title, category, avatar, login)
+						.swiper-slide
+							a.feed__item(href="collection.html")
+								.feed__preview
+									img(src=image alt="")
+								.feed__wrap(style="background-color:" + color)
+									.feed__photo
+										img(src=photo alt="")
+									.feed__line
+										.feed__subtitle.h1=title
+										.feed__category.h4=category
+									.feed__author
+										.feed__avatar
+											img(src=avatar alt="")
+										| @
+										=login
+					+feedSlide("img/content/main-pic-2.jpg", false, "img/content/balls.jpg", "Escape", "ESCP", "img/content/artists/artist-3.jpg", "randomdash")
+					+feedSlide("img/content/main-pic-1.jpg", "#BCE6EC", "img/content/avatar-1.jpg", "Escape II", "ESCP", "img/content/artists/artist-4.jpg", "tranmautritam")
+					+feedSlide("img/content/main-pic-2.jpg", "#DBFF73", "img/content/cute-planet.jpg", "Escape", "ESCP", "img/content/artists/artist-5.jpg", "moyoshiro")
+				button.swiper-button-prev
+				button.swiper-button-next
+	// stories
+	.stories
+		.stories__title.h1 Stories
+		.stories__list
+			a.stories__add.js-popup-open(href="#popup-add-story" data-effect="mfp-zoom-in")
+				+i('plus')
+			// popup
+			.popup.popup_add-story.mfp-hide#popup-add-story
+				.stories__load
+					.stories__inner
+						input.stories__input(type="file")
+						.stories__details
+							.stories__icon
+								+i('upload-alt')
+							.stories__subtitle.h4 Drag & drop to upload
+							.stories__text
+								p Quickly share your work in progress with your followers. It will be appeared in their feed.
+								p Maximum: 4 images.
+						button.button-white.stories__button
+							span share your story
+							+i('arrow-right-thin')
+			mixin storie(image)
+				a.stories__item.js-popup-open(href="#popup-story" data-effect="mfp-zoom-in")
+					span.stories__image
+						img(src=image alt="")
+			+storie("img/content/artists/artist-1.jpg")
+			+storie("img/content/artists/artist-2.jpg")
+			+storie("img/content/artists/artist-3.jpg")
+			+storie("img/content/artists/artist-4.jpg")
+			+storie("img/content/artists/artist-5.jpg")
+			+storie("img/content/artists/artist-6.jpg")
+			+storie("img/content/artists/artist-7.jpg")
+			+storie("img/content/artists/artist-8.jpg")
+			+storie("img/content/artists/artist-1.jpg")
+			+storie("img/content/artists/artist-2.jpg")
+			+storie("img/content/artists/artist-3.jpg")
+			+storie("img/content/artists/artist-4.jpg")
+			+storie("img/content/artists/artist-5.jpg")
+			+storie("img/content/artists/artist-6.jpg")
+			+storie("img/content/artists/artist-7.jpg")
+			+storie("img/content/artists/artist-8.jpg")
+			// popup
+			.popup.popup_story.mfp-hide#popup-story
+				.stories__wrapper
+					// swiper
+					.swiper.swiper-stories
+						.swiper-wrapper
+							mixin storieItem(avatar, name, login, image1, image2, image3)
+								.swiper-slide
+									.stories__box
+										.stories__author
+											.stories__avatar
+												img(src=avatar alt="")
+											.stories__description
+												.stories__name=name
+												.stories__login @
+													=login
+										.stories__wrap
+											// swiper
+											.swiper.swiper-stories-inner
+												.swiper-wrapper
+													.swiper-slide
+														.stories__preview
+															img(src=image1 alt="")
+													.swiper-slide
+														.stories__preview
+															img(src=image2 alt="")
+													.swiper-slide
+														.stories__preview
+															img(src=image3 alt="")
+													.swiper-slide
+														.stories__preview
+															img(src="img/content/story-4.jpg" alt="")
+													.swiper-slide
+														.stories__preview
+															img(src="img/content/story-5.jpg" alt="")
+												.swiper-pagination
+							+storieItem("img/content/artists/artist-3.jpg", "Moyo Shiro", "moyoshiro", "img/content/story-3.jpg", "img/content/story-4.jpg", "img/content/story-5.jpg")
+							+storieItem("img/content/artists/artist-4.jpg", "Kohaku", "kohaku", "img/content/story-4.jpg", "img/content/story-5.jpg", "img/content/story-1.jpg")
+							+storieItem("img/content/artists/artist-5.jpg", "Dash", "randomdash", "img/content/story-5.jpg", "img/content/story-1.jpg", "img/content/story-2.jpg")
+							+storieItem("img/content/artists/artist-1.jpg", "Kohaku", "kohaku", "img/content/story-2.jpg", "img/content/story-3.jpg", "img/content/story-4.jpg")
+							+storieItem("img/content/artists/artist-1.jpg", "Moyo Shiro", "moyoshiro", "img/content/story-3.jpg", "img/content/story-4.jpg", "img/content/story-5.jpg")
+						button.swiper-button-prev
+						button.swiper-button-next
+	// creators
+	.creators
+		.creators__col
+			.creators__title.h1 Collection<br> from creators<br> you follow
+			.creators__list
+				mixin creatorsCollection(photo, image, title, avatar, login)
+					a.creators__collection(href="collection.html")
+						.creators__photo
+							img.creators__picture(src=photo alt="")
+						.creators__line
+							.creators__image
+								img.creators__picture(src=image alt="")
+							.creators__subtitle.h3=title
+							.creators__author
+								.creators__avatar
+									img(src=avatar alt="")
+								span @
+									=login
+				+creatorsCollection("img/content/collection/pic-1.jpg", "img/content/main-pic-2.jpg", "Escape", "img/content/artists/artist-1.jpg", "randomdash")
+				+creatorsCollection("img/content/collection/pic-2.jpg", "img/content/main-pic-2.jpg", "Escape II", "img/content/artists/artist-2.jpg", "tranmautritam")
+				+creatorsCollection("img/content/collection/pic-3.jpg", "img/content/main-pic-2.jpg", "Escape", "img/content/artists/artist-3.jpg", "randomdash")
+				+creatorsCollection("img/content/collection/pic-4.jpg", "img/content/main-pic-2.jpg", "Escape III", "img/content/artists/artist-4.jpg", "tranmautritam")
+			.creators__btns
+				button.button-stroke.button-medium.creators__button load more
+		.creators__col
+			.creators__top
+				.creators__info.h4 Top creators <br>of the week.
+				.creators__group
+					mixin creatorsUser(avatar, name, login, sale)
+						a.creators__item(href="profile.html")
+							.creators__avatar
+								img(src=avatar alt="")
+							.creators__details
+								.creators__box
+									.creators__name=name
+									.creators__login @
+										=login
+								.creators__box
+									.creators__text Total sale
+									.creators__sale=sale
+					+creatorsUser("img/content/artists/artist-1.jpg", "Dash", "randomdash", "2.00 ETH")
+					+creatorsUser("img/content/artists/artist-2.jpg", "Kohaku Tora", "kohaku", "4.32 ETH")
+					+creatorsUser("img/content/artists/artist-3.jpg", "Dash", "randomdash", "5.89 ETH")
+					+creatorsUser("img/content/artists/artist-4.jpg", "Kohaku Tora", "kohaku", "5.55 ETH")
+					+creatorsUser("img/content/artists/artist-5.jpg", "Dash", "randomdash", "11.34 ETH")
+			.creators__top
+				.creators__info.h4 Top collectors <br>of the week.
+				.creators__group
+					+creatorsUser("img/content/artists/artist-6.jpg", "Dash", "randomdash", "100.00 ETH")
+					+creatorsUser("img/content/artists/artist-7.jpg", "Kohaku Tora", "kohaku", "4.32 ETH")
+					+creatorsUser("img/content/artists/artist-8.jpg", "Dash", "randomdash", "90.55 ETH")
+					+creatorsUser("img/content/artists/artist-1.jpg", "Kohaku Tora", "kohaku", "5.55 ETH")
+					+creatorsUser("img/content/artists/artist-2.jpg", "Dash", "randomdash", "11.34 ETH")
+	// catalog
+	.catalog.dark
+		.catalog__wrapper
+			.catalog__head
+				.catalog__title.h1 Collect now
+				// tabs
+				.tabs
+					a.tabs__button.active(href="#") 1 days
+					a.tabs__button(href="#") 7 days
+					a.tabs__button(href="#") 30 days
+				button.catalog__toggle
+					+i('filter-1')
+					+i('close')
+			include includes/filters
+			.catalog__list
+				+card("img/content/nfts/image-1.jpg", "img/content/collection/image-6.jpg", "ESCP", "The Currency", "img/content/artists/artist-1.jpg", "elnafrederick", true, "0.4321 ETH", "2.02 ETH")
+				+card("img/content/nfts/image-2.jpg", "img/content/collection/image-5.jpg", "ESCP", "The Currency", "img/content/artists/artist-2.jpg", "randomdash", true, "14.556 ETH", "34.22 ETH")
+				+card("img/content/nfts/image-3.jpg", "img/content/collection/image-4.jpg", "ESCP", "The Currency", "img/content/artists/artist-3.jpg", "gelo", false, "8.5627 ETH", "1.44 ETH")
+				+card("img/content/nfts/image-4.jpg", "img/content/collection/image-3.jpg", "ESCP", "The Currency", "img/content/artists/artist-4.jpg", "kohaku", true, "45.8676 ETH", "5.72 ETH")
+				+card("img/content/nfts/image-5.jpg", "img/content/collection/image-6.jpg", "ESCP", "The Currency", "img/content/artists/artist-1.jpg", "gelo", true, "0.4321 ETH", "12.02 ETH")
+				+card("img/content/nfts/image-6.jpg", "img/content/collection/image-5.jpg", "ESCP", "The Currency", "img/content/artists/artist-2.jpg", "elnafrederick", true, "14.556 ETH", "24.22 ETH")
+				+card("img/content/nfts/image-7.jpg", "img/content/collection/image-4.jpg", "ESCP", "The Currency", "img/content/artists/artist-3.jpg", "randomdash", false, "8.5627 ETH", "12.44 ETH")
+				+card("img/content/nfts/image-8.jpg", "img/content/collection/image-3.jpg", "ESCP", "The Currency", "img/content/artists/artist-4.jpg", "kohaku", true, "45.8676 ETH", "45.72 ETH")
+				+card("img/content/nfts/image-9.jpg", "img/content/collection/image-6.jpg", "ESCP", "The Currency", "img/content/artists/artist-1.jpg", "elnafrederick", true, "0.4321 ETH", "2.02 ETH")
+				+card("img/content/nfts/image-10.jpg", "img/content/collection/image-5.jpg", "ESCP", "The Currency", "img/content/artists/artist-2.jpg", "randomdash", true, "14.556 ETH", "34.22 ETH")
+				+card("img/content/nfts/image-11.jpg", "img/content/collection/image-4.jpg", "ESCP", "The Currency", "img/content/artists/artist-3.jpg", "gelo", false, "8.5627 ETH", "1.44 ETH")
+				+card("img/content/nfts/image-12.jpg", "img/content/collection/image-3.jpg", "ESCP", "The Currency", "img/content/artists/artist-4.jpg", "kohaku", true, "45.8676 ETH", "5.72 ETH")
+			.catalog__btns
+				button.button-stroke.button-medium.catalog__button load more
+	include includes/newsletter
+	
+
+
+
+
+
+
+
+
+
+
+
+
+	

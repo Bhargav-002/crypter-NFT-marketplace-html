@@ -1,0 +1,41 @@
+// filters
+.filters
+	.filters__head
+		.filters__title.h3 Advanced filter
+		// form
+		form.form(action="")
+			// field
+			.field
+				.field__wrap
+					input.field__input(type="text" name="search" placeholder="Search by NFTs" required)
+			button.form__button(type="submit")
+				+i('search')
+	.filters__row
+		.filters__col
+			.filters__label Status
+			.filters__statuses
+				button.filters__status.active
+					span.filters__check
+						+i('check-fat')
+					span All
+				button.filters__status
+					span.filters__check
+						+i('check-fat')
+					span Auction
+				button.filters__status
+					span.filters__check
+						+i('check-fat')
+					span Offer
+				button.filters__status.active
+					span.filters__check
+						+i('check-fat')
+					span Buy now
+		.filters__col
+			.filters__label Price
+			form.filters__fieldset(action="")
+				.filters__field
+					input.filters__input(type="tel" name="min" placeholder="Min" required)
+				.filters__field
+					input.filters__input(type="tel" name="max" placeholder="Max" required)
+				button.button-large.filters__button(type="submit") apply
+

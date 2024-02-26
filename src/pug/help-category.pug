@@ -1,0 +1,58 @@
+---
+title: Crypter 2
+classLinkMenuHelpCenter: active
+classLinkAccountHelp: active
+footerHide: true
+---
+extends layouts/layout
+block content
+	// categories
+	.categories
+		.categories__col
+			.categories__wrap
+				.categories__top
+					.categories__title.h1 Gettings started on Crypter
+					a.categories__back(href="help.html")
+						+i('arrow-left')
+				.categories__preview
+					img(src="img/content/help-pic-1.png" alt="")
+		.categories__col
+			// form
+			form.form.form_button-right(action="")
+				// field
+				.field
+					.field__wrap
+						input.field__input(type="text" name="search" placeholder="Search topics" required)
+				button.form__button(type="submit")
+					+i('search')
+			.categories__group
+				mixin categoriesItem(title)
+					.categories__item
+						.categories__head.h4
+							=title
+							.categories__plus
+						.categories__body
+							a.categories__link(href="help-detail.html")
+								+i('arrow-right')
+								.categories__circle
+								| Connect your wallet to Crypter
+							a.categories__link(href="help-detail.html")
+								+i('arrow-right')
+								.categories__circle
+								| Guide to collection NFT artworks on Crypter
+							a.categories__link(href="help-detail.html")
+								+i('arrow-right')
+								.categories__circle
+								| Marketplace balance
+							a.categories__link(href="help-detail.html")
+								+i('arrow-right')
+								.categories__circle
+								| Marketplace fees
+							a.categories__link(href="help-detail.html")
+								+i('arrow-right')
+								.categories__circle
+								| What is offer price?
+				+categoriesItem("Buying")
+				+categoriesItem("Selling")
+				+categoriesItem("Creating")
+				+categoriesItem("Creating")

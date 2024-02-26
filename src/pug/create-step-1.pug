@@ -1,0 +1,39 @@
+---
+title: Crypter 2
+headerEmpty: true
+footerHide: true
+---
+extends layouts/layout
+block content
+	// create
+	.create
+		.create__col
+			.create__wrap
+				.create__top
+					.create__title.h1 Create a <br>Collection.
+					a.button-circle.create__back(href="create.html")
+						+i('arrow-left')
+				.create__stage Deploy a smart contract to showcase a series of NFT artworks.
+				form.create__form(action="")
+					// field
+					.field.field_icon.field_large
+						.field__wrap
+							input.field__input(type="text" name="collection-name" placeholder="Collection name" required)
+							+i('profile')
+					// field
+					.field.field_icon.field_large
+						.field__wrap
+							input.field__input(type="email" name="collection-symbol" placeholder="Collection symbol" required)
+							+i('email')
+					a.button-large.create__button(href="create-step-2.html")
+						span Continue
+						+i('arrow-right')
+		.create__col
+			.create__subtitle Preview
+			.create__picture
+				.create__image
+				.create__category
+			.create__bottom
+				.create__name.h4
+				.create__value 0 NFT
+			

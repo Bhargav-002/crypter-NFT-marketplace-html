@@ -1,0 +1,17 @@
+.overlay
+    position: fixed
+    top: 0
+    left: 0
+    z-index: 8
+    width: 100%
+    height: 100%
+    background: rgba(#202020, .95)
+    backdrop-filter: blur(rem(32))
+    visibility: hidden
+    opacity: 0
+    transition: all .2s
+    +m
+        z-index: 8
+    &.visible
+        visibility: visible
+        opacity: 1

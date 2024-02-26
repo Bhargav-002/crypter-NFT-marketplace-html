@@ -1,0 +1,77 @@
+// popup
+.popup.popup_connect.mfp-hide#popup-connect
+	// connect
+	.connect
+		.connect__row
+			mixin connectColLeft(color, info)
+				.connect__col(style="background-color:" + color)
+					+logo
+					.connect__line
+						.connect__title.h1 Connect wallet.
+						+arrow("#F7FBFA")
+					.connect__info=info
+			+connectColLeft("#BCE6EC", "Choose how you want to connect. There are several wallet providers.")
+			.connect__col
+				// wallets
+				.wallets
+					.wallets__title.h3 Choose the wallet
+					.wallets__head
+						.wallets__tabs
+							button.wallets__tab.active Ethereum
+							button.wallets__tab Flow
+							button.wallets__tab Solana
+							button.wallets__tab Polygon
+					.wallets__list
+						mixin walletsItem(image, title)
+							button.wallets__item
+								span.wallets__inner
+									span.wallets__image
+										img(src=image alt="")
+									=title
+									+i('arrow-right')
+						+walletsItem("img/content/meta-mask.svg", "MetaMask")
+						+walletsItem("img/content/wallet-connect.svg", "WalletConnect")
+						+walletsItem("img/content/coin-base.svg", "Coinbase Wallet")
+						+walletsItem("img/content/my-ether-wallet.svg", "MyEtherWallet")
+					.wallets__btns
+						button.wallets__scan Scan to connect
+				.connect__cookies
+					.connect__text We use 🍪 <span>cookies</span> for better experience
+					button.connect__accept Accept
+		.connect__row
+			button.button-circle.connect__back
+				+i('arrow-left')
+			+connectColLeft("#B9A9FB", "Choose how you want to connect. There are several wallet providers.")
+			.connect__col
+				.connect__scan
+					.connect__subtitle.h3 Scan to connect
+					.connect__code
+						.connect__lines
+							span
+							span
+							span
+							span
+						img(src="img/content/scan.png" alt="")
+					.connect__foot
+						.connect__text Powered by crypter
+						button.connect__question Don’t have a wallet app?
+				.connect__cookies
+					.connect__text We use 🍪 <span>cookies</span> for better experience
+					button.connect__accept Accept
+		.connect__row
+			button.button-circle.connect__back
+				+i('arrow-left')
+			+connectColLeft("#DBFF73", "Sign the message in your wallet to continue")
+			.connect__col
+				.connect__message
+					.connect__logo
+						img(src="img/content/logo-connect-wallet.svg" alt="")
+					.connect__subtitle.h3 Sign the message <br>in your wallet to continue
+					.connect__content Crypter uses this signature to verify that you’re the owner of this Ethereum address.
+					.connect__btns
+						button.button-stroke-white.connect__button Disconnect
+						button.button-white.connect__button continue
+					.connect__links
+						button.connect__question New to Ethereum?
+						button.connect__learn Learn about wallet
+							+i('arrow-right')

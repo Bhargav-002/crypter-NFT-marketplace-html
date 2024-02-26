@@ -1,0 +1,55 @@
+// search
+.search(class=classSearch)
+    .search__head
+        .search__field
+            input.search__input(type="text" name="search" placeholder="Search ..." autocomplete="off")
+        button.search__clear clear
+        button.search__toggle
+            +i('search')
+            +i('close')
+    .search__result
+        .search__group
+            .search__category NFTs
+            .search__list
+                a.search__item(href="nft.html")
+                    .search__preview
+                        img(src="img/content/result-pic-1.jpg" alt="")
+                    .search__details
+                        .search__title Cute Planet
+                        .search__content <span>Buy now</span> 12.29 ETH
+                a.search__item(href="nft.html")
+                    .search__preview
+                        img(src="img/content/result-pic-2.jpg" alt="")
+                    .search__details
+                        .search__title Cute character
+                        .search__content <span>Reserve</span> 0.5 ETH
+        .search__group
+            .search__category collection
+            .search__list
+                a.search__item(href="collection.html")
+                    .search__preview
+                        img(src="img/content/result-pic-3.jpg" alt="")
+                    .search__details
+                        .search__title The Currency
+                        .search__content <span>@</span>tranmautritam
+                a.search__item(href="collection.html")
+                    .search__preview
+                        img(src="img/content/result-pic-1.jpg" alt="")
+                    .search__details
+                        .search__title The Currency
+                        .search__content <span>@</span>tranmautritam
+        .search__group
+            .search__category artist
+            .search__list
+                a.search__item(href="profile.html")
+                    .search__preview
+                        img(src="img/content/result-pic-1.jpg" alt="")
+                    .search__details
+                        .search__title Dash
+                        .search__content <span>@</span>randomdash
+                a.search__item(href="profile.html")
+                    .search__preview
+                        img(src="img/content/result-pic-1.jpg" alt="")
+                    .search__details
+                        .search__title Tran Mau Tri Tam
+                        .search__content <span>@</span>tranmautritam

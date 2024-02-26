@@ -1,0 +1,114 @@
+.menu
+    display: flex
+    flex-grow: 1
+    &__col
+        display: flex
+        flex-direction: column
+        flex: 0 0 50%
+        width: 50%
+        padding: rem(80)
+        +xl
+            padding: rem(64)
+        +w
+            padding: rem(40)
+        +t
+            flex: 0 0 100%
+            width: 100%
+            padding-top: rem(80)
+        +m
+            padding: rem(56) rem(24) rem(24)
+        &:nth-child(1)
+            justify-content: flex-end
+            background: $a2
+            +t
+                display: none
+    .search
+        display: none
+        +t
+            display: block
+    &__title
+        margin-bottom: rem(40)
+        +xl
+            +h1M
+        +w
+            max-width: rem(400)
+            +h1S
+    &__socials
+        display: flex
+        margin: 0 rem(-12)
+        +d
+            margin: 0 rem(-6)
+    &__social
+        display: flex
+        justify-content: center
+        align-items: center
+        flex: 1 1 auto
+        height: rem(56)
+        margin: 0 rem(12)
+        border-radius: rem(12)
+        background: $n1
+        transition: background .2s
+        +d
+            margin: 0 rem(6)
+            border-radius: rem(8)
+        .icon
+            fill: $n8
+            transition: fill .2s
+        &:hover
+            background: $n8
+            .icon
+                fill: $n1
+    &__list
+        margin: auto rem(-80)
+        +xl
+            margin: auto rem(-64)
+        +w
+            margin: auto rem(-40)
+        +m
+            margin: auto rem(-24)
+    .link
+        padding: 2vh rem(80)
+        border-bottom: rem(1) solid $n7
+        +xl
+            padding: 2vh rem(64)
+            +h3M
+        +w
+            padding: 2vh rem(40)
+            +h3S
+        +d
+            +h4S
+        +t
+            +h3S
+        +m
+            padding: 2vh rem(24)
+            +h4S
+    &__info
+        margin: rem(32) 0
+        color: $n4
+        +w
+            +h4S
+        +m
+            margin: rem(40) 0 rem(12)
+            +body1S
+    &__btns
+        display: flex
+        +d
+            margin: 0 rem(-10)
+        +m
+            display: block
+            margin: 0
+    &__button
+        +d
+            flex: 0 0 calc(50% - rem(20))
+            width: calc(50% - rem(20))
+            margin: 0 rem(10)
+            padding: 0 rem(16)
+        +m
+            width: 100%
+            margin: 0
+        &:not(:last-child)
+            margin-right: rem(20)
+            +d
+                margin-right: rem(10)
+            +m
+                margin: 0 0 rem(20)

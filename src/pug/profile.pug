@@ -1,0 +1,214 @@
+---
+title: Crypter 2
+headerClass: header_light
+footerHide: true
+classLinkAccountMyProfile: active
+---
+extends layouts/layout
+block content
+	// background
+	.background
+		img(src="img/content/background-1.jpg" alt="")
+	// profile
+	.profile
+		.profile__col
+			.profile__avatar
+				img(src="img/content/avatar-1.jpg" alt="")
+			.profile__details
+				.profile__head
+					.profile__flex
+						.profile__box
+							.profile__user.h2 Kohaku
+							.profile__line
+								.profile__login @kohaku
+								.profile__code 0x1e86…533B
+									button.profile__copy
+										+i('copy')
+						+follow('follow_dark')
+					.profile__actions
+						.profile__action.active
+							.profile__counter.h4 96 ETH
+							.profile__subtitle
+								+i('profile-fat')
+								| Total sales
+						.profile__action
+							.profile__counter.h4 1,920
+							.profile__subtitle
+								+i('profile-fat')
+								| Following
+						.profile__action
+							.profile__counter.h4 2,880
+							.profile__subtitle
+								+i('profile-fat')
+								| Followers
+				.profile__contacts
+					.profile__description
+						.profile__item
+							.profile__category bio
+							.profile__content We are laying the groundwork for web3 — the next generation of the internet full of limitless possibilities. Join the millions of creators, collectors, and curators who are on this journey.
+						.profile__item
+							.profile__category links
+							.profile__links
+								a.profile__link(href="https://crypter.net/" target="_blank")
+									+i('country')
+									| crypter.net
+								a.profile__link(href="https://crypter.net/" target="_blank")
+									+i('link')
+									| mirror.xyz/crypter
+					.profile__socials
+						a.profile__social(href="https://www.instagram.com/crypternet/" target="_blank")
+							+i('instagram')
+						a.profile__social(href="https://twitter.com/crypter" target="_blank")
+							+i('twitter')
+						a.profile__social(href="https://www.linkedin.com/company/crypter" target="_blank")
+							+i('linkedin')
+						a.profile__social(href="https://www.facebook.com/crypter.net/" target="_blank")
+							+i('facebook')
+		.profile__col
+			// list
+			.list(style="display: block")
+				.list__head
+					.list__nav
+						button.list__tab.active
+							span.list__title Created
+							span.list__counter 256
+						button.list__tab
+							span.list__title Collections
+							span.list__counter 4
+						button.list__tab
+							span.list__title Owners
+							span.list__counter 16
+				.list__wrapper
+					.list__item(style="display: block")
+						// tokens
+						.tokens
+							.tokens__head
+								// users
+								.users.users_border
+									.users__title Collected by
+									.users__group
+										.users__item
+											img(src="img/content/users/avatar-1.jpg" alt="")
+										.users__item
+											img(src="img/content/users/avatar-2.jpg" alt="")
+										.users__item
+											img(src="img/content/users/avatar-3.jpg" alt="")
+										.users__item
+											img(src="img/content/users/avatar-4.jpg" alt="")
+										.users__item
+											img(src="img/content/users/avatar-5.jpg" alt="")
+									.users__counter 12
+								// actions
+								.actions
+									.actions__sortings
+										button.actions__sorting
+											+i('list')
+										button.actions__sorting.active
+											+i('grid')
+									//- button.actions__filters
+									//- 	+i('filter')
+									button.actions__theme
+										+i('sun')
+										+i('moon')
+							.tokens__group
+								+tokensItem("img/content/tokens/token-2.jpg", "The Explorer", "12.29 ETH")
+								+tokensItem("img/content/tokens/token-1.jpg", "Escape II", "2.44 ETH")
+								+tokensItem("img/content/tokens/token-3.jpg", "Escape", "22.33 ETH")
+								+tokensItem("img/content/tokens/token-4.jpg", "The Explorer", "12.29 ETH")
+								+tokensItem("img/content/tokens/token-5.jpg", "Escape I", "10.09 ETH")
+								+tokensItem("img/content/tokens/token-6.jpg", "The Explorer", "55.55 ETH")
+								+tokensItem("img/content/tokens/token-7.jpg", "The Explorer", "12.29 ETH")
+								+tokensItem("img/content/tokens/token-8.jpg", "Escape", "9.08 ETH")
+							+spinner
+					.list__item
+						// compilation
+						.compilation
+							.compilation__head
+								// users
+								.users.users_border
+									.users__title Collected by
+									.users__group
+										.users__item
+											img(src="img/content/users/avatar-1.jpg" alt="")
+										.users__item
+											img(src="img/content/users/avatar-2.jpg" alt="")
+										.users__item
+											img(src="img/content/users/avatar-3.jpg" alt="")
+										.users__item
+											img(src="img/content/users/avatar-4.jpg" alt="")
+										.users__item
+											img(src="img/content/users/avatar-5.jpg" alt="")
+									.users__counter 12
+								// actions
+								.actions
+									//- button.actions__filters
+									//- 	+i('filter')
+									button.actions__theme
+										+i('sun')
+										+i('moon')
+							.compilation__list
+								+compilationItem("img/content/collection/collection-1.jpg", "img/content/collection/collection-5.jpg", "ESCP", "Escape II", "positive", "+22.4%", "1.00 ETH")
+								+compilationItem("img/content/collection/collection-2.jpg", "img/content/collection/collection-4.jpg", "ESCP", "Escape I", "positive", "+45.2%", "14.34 ETH")
+								+compilationItem("img/content/collection/collection-3.jpg", "img/content/collection/collection-3.jpg", "ESCP", "Escape II", "negative", "-5.4%", "7.00 ETH")
+								+compilationItem("img/content/collection/collection-4.jpg", "img/content/collection/collection-2.jpg", "ESCP", "Escape I", "negative", "-11.4%", "14.34 ETH")
+							+spinner
+					.list__item
+						include includes/owners
+			// list
+			.list
+				.list__head
+					.list__nav
+						button.list__tab.active
+							span.list__title Followers
+							span.list__counter 2,880
+						button.list__tab
+							span.list__title Following
+							span.list__counter 1,920
+				.list__wrapper
+					.list__item(style="display: block")
+						// followers
+						.followers
+							.followers__head.h3
+								.followers__title Followers 
+								.followers__counter 2,880
+							.followers__list
+								+follower("img/content/artists/artist-1.jpg", "history", "Dash", "randomdash", "12 NFTs")
+								+follower("img/content/artists/artist-2.jpg", false, "Kohaku", "kohaku", "4 NFTs")
+								+follower("img/content/artists/artist-3.jpg", "history", "Moyo Shiro", "moyoshiro", "8.22 NFTs")
+								+follower("img/content/artists/artist-4.jpg", "history", "Dash", "randomdash", "5.2 NFTs")
+								+follower("img/content/artists/artist-5.jpg", false, "Kohaku", "kohaku", "1.1 NFTs")
+								+follower("img/content/artists/artist-1.jpg", "history", "Dash", "randomdash", "12 NFTs")
+								+follower("img/content/artists/artist-2.jpg", false, "Kohaku", "kohaku", "4 NFTs")
+								+follower("img/content/artists/artist-3.jpg", "history", "Moyo Shiro", "moyoshiro", "8.22 NFTs")
+								+follower("img/content/artists/artist-4.jpg", "history", "Dash", "randomdash", "5.2 NFTs")
+								+follower("img/content/artists/artist-5.jpg", false, "Kohaku", "kohaku", "1.1 NFTs")
+								+follower("img/content/artists/artist-1.jpg", "history", "Dash", "randomdash", "12 NFTs")
+								+follower("img/content/artists/artist-2.jpg", false, "Kohaku", "kohaku", "4 NFTs")
+								+follower("img/content/artists/artist-3.jpg", "history", "Moyo Shiro", "moyoshiro", "8.22 NFTs")
+								+follower("img/content/artists/artist-4.jpg", "history", "Dash", "randomdash", "5.2 NFTs")
+								+follower("img/content/artists/artist-5.jpg", false, "Kohaku", "kohaku", "1.1 NFTs")
+					.list__item
+						// followers
+						.followers
+							.followers__head.h3
+								.followers__title Following 
+								.followers__counter 1,920
+							.followers__list
+								+follower("img/content/artists/artist-1.jpg", "history", "Dash", "randomdash", "12 NFTs", "active")
+								+follower("img/content/artists/artist-2.jpg", false, "Kohaku", "kohaku", "4 NFTs", "active")
+								+follower("img/content/artists/artist-3.jpg", "history", "Moyo Shiro", "moyoshiro", "8.22 NFTs", "active")
+								+follower("img/content/artists/artist-4.jpg", "history", "Dash", "randomdash", "5.2 NFTs", "active")
+								+follower("img/content/artists/artist-5.jpg", false, "Kohaku", "kohaku", "1.1 NFTs", "active")
+								+follower("img/content/artists/artist-1.jpg", "history", "Dash", "randomdash", "12 NFTs", "active")
+								+follower("img/content/artists/artist-2.jpg", false, "Kohaku", "kohaku", "4 NFTs", "active")
+								+follower("img/content/artists/artist-3.jpg", "history", "Moyo Shiro", "moyoshiro", "8.22 NFTs", "active")
+								+follower("img/content/artists/artist-4.jpg", "history", "Dash", "randomdash", "5.2 NFTs", "active")
+								+follower("img/content/artists/artist-5.jpg", false, "Kohaku", "kohaku", "1.1 NFTs", "active")
+
+
+
+
+
+
+
+

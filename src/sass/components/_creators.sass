@@ -1,0 +1,210 @@
+.creators
+    display: flex
+    border-top: rem(1) solid $n3
+    overflow: hidden
+    +t
+        display: block
+    &__col
+        padding: rem(80)
+        +xl
+            padding: rem(64)
+        +w
+            padding: rem(64) rem(40)
+        +t
+            padding: rem(40) rem(24)
+        &:nth-child(1)
+            flex-grow: 1
+        &:nth-child(2)
+            flex-shrink: 0
+            width: rem(566)
+            border-left: rem(1) solid $n3
+            +w
+                width: rem(420)
+            +t
+                width: 100%
+                border: none
+    &__title
+        margin-bottom: rem(80)
+        +t
+            margin-bottom: rem(40)
+            br
+                display: none
+    &__collection
+        display: block
+        color: $n7
+        transition: color .2s
+        &:hover
+            color: $s2
+            .creators__picture
+                transform: scale(1.05)
+        &:not(:last-child)
+            margin-bottom: rem(128)
+            +xl
+                margin-bottom: rem(104)
+            +d
+                margin-bottom: rem(80)
+            +t
+                margin-bottom: rem(64)
+    &__photo
+        position: relative
+        height: rem(500)
+        margin-bottom: rem(36)
+        overflow: hidden
+        border-radius: rem(32)
+        +d
+            height: rem(320)
+            margin-bottom: rem(12)
+            border-radius: rem(16)
+    &__picture
+        +imageCover
+        border-radius: rem(32)
+        transition: transform 1s
+        +d
+            border-radius: rem(16)
+    &__line
+        display: flex
+        align-items: flex-start
+        padding: 0 rem(24) 0 rem(40)
+        +xl
+            padding-right: 0
+        +d
+            padding-left: rem(24)
+    &__image
+        position: relative
+        flex-shrink: 0
+        width: rem(144)
+        height: rem(144)
+        margin: rem(-96) rem(40) 0 0
+        border-radius: rem(24)
+        box-shadow: 0 0 0 rem(4) $o1
+        +w
+            margin-right: rem(24)
+        +d
+            width: rem(104)
+            height: rem(104)
+            margin-top: rem(-56)
+            border-radius: rem(12)
+        +m
+            margin-right: rem(12)
+        img
+            +imageCover
+            border-radius: rem(24)
+            +d
+                border-radius: rem(12)
+    &__subtitle
+        margin-right: rem(32)
+        +d
+            margin-right: rem(16)
+            padding-top: rem(8)
+            +h4S
+        +m
+            display: none
+    &__author
+        display: flex
+        align-items: center
+        margin-left: auto
+        +body1
+        color: $n7
+        +d
+            +body1S
+        +m
+            max-width: calc(100% - rem(116))
+            margin-left: 0
+        span
+            +m
+                max-width: calc(100% - rem(60))
+                +text-overflow
+    &__collection &__avatar
+        width: rem(48)
+        height: rem(48)
+        margin-right: rem(16)
+        +d
+            margin-right: rem(12)
+        &:after
+            content: ""
+            position: absolute
+            inset: 0
+            border: rem(2) solid $o1
+            border-radius: 50%
+    &__avatar
+        position: relative
+        flex-shrink: 0
+        img
+            +imageCover
+            border-radius: 50%
+    &__btns
+        margin-top: rem(72)
+        text-align: center
+        +d
+            margin-top: rem(56)
+        +t
+            margin-top: rem(48)
+    &__top
+        &:not(:nth-child(1))
+            padding-top: rem(80)
+            +d
+                padding-top: rem(64)
+    &__info
+        margin-bottom: rem(24)
+        +w
+            +h4S
+        +t
+            max-width: 100%
+            font-size: rem(32)
+            line-height: rem(40)
+    &__group
+        margin: 0 rem(-80)
+        +xl
+            margin: 0 rem(-64)
+        +w
+            margin: 0 rem(-40)
+        +t
+            margin: 0 rem(-24)
+    &__item
+        display: flex
+        align-items: center
+        padding: rem(48) rem(80)
+        border-bottom: rem(1) solid $n3
+        transition: box-shadow .2s, border-color .2s
+        +xl
+            padding: rem(48) rem(64)
+        +w
+            padding: rem(40)
+        +t
+            padding: rem(24) rem(40)
+        +t
+            padding: rem(24)
+        &:hover
+            border-color: transparent
+            +shadow1
+    &__item &__avatar
+        width: rem(80)
+        height: rem(80)
+        margin-right: rem(24)
+        +m
+            margin-right: rem(16)
+    &__details
+        display: flex
+        justify-content: space-between
+        align-items: center
+        flex-grow: 1
+    &__box
+        &:nth-child(2)
+            flex-shrink: 0
+            margin-left: rem(16)
+            text-align: right
+            +w
+                position: relative
+                top: rem(-4)
+    &__name,
+    &__sale
+        +body1
+        color: $n7
+        +w
+            +body1S
+    &__login,
+    &__text
+        +body2Bold
+        color: $n5
+        +w
+            font-size: rem(16)

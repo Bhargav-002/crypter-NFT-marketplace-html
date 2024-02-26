@@ -1,0 +1,63 @@
+---
+title: Crypter 2
+classLinkMenuDiscover: active
+footerHide: true
+---
+extends layouts/layout
+block content
+	// ranking
+	.ranking
+		.ranking__col
+			.ranking__wrap
+				.ranking__title.hero <span>Artist</span> <br>of the <span>week</span>
+				// form
+				form.form.form_button-right(action="")
+					// field
+					.field
+						.field__wrap
+							input.field__input(type="text" name="search" placeholder="Search" required)
+					button.form__button(type="submit")
+						+i('search')
+		.ranking__col
+			.ranking__sorting
+				// tabs
+				.tabs.tabs_artists
+					a.tabs__button.active(href="#") Artist
+					a.tabs__button(href="#") Collector
+				// tabs
+				.tabs.tabs_sorting
+					a.tabs__button.active(href="#") 1 days
+					a.tabs__button(href="#") 7 days
+					a.tabs__button(href="#") 30 days
+			.ranking__head
+				.ranking__caption #
+				.ranking__caption Artist
+				.ranking__caption Volume
+			.ranking__artists
+				mixin artist(number, avatar, name, sale, crypto, price)
+					a.ranking__item(href="profile.html")
+						.ranking__number
+							.ranking__inner=number
+						.ranking__artist
+							.ranking__avatar
+								img(src=avatar alt="")
+							.ranking__details
+								.ranking__name=name
+								.ranking__sale Total sale 
+									span=sale
+						.ranking__info
+							.ranking__crypto=crypto
+							.ranking__price=price
+				+artist("1", "img/content/artists/artist-1.jpg", "Dash", "5.244 ETH", "12 ETH", "$24,550")
+				+artist("2", "img/content/artists/artist-2.jpg", "Foxies", "2.111 ETH", "9 ETH", "$32,111")
+				+artist("3", "img/content/artists/artist-3.jpg", "Kohaku", "9.657 ETH", "55 ETH", "$9,654")
+				+artist("4", "img/content/artists/artist-4.jpg", "Dash", "4.543 ETH", "2 ETH", "$24,550")
+				+artist("5", "img/content/artists/artist-5.jpg", "Foxies", "5.244 ETH", "12 ETH", "$11,444")
+				+artist("6", "img/content/artists/artist-1.jpg", "Dash", "5.244 ETH", "12 ETH", "$24,550")
+				+artist("7", "img/content/artists/artist-2.jpg", "Foxies", "2.111 ETH", "9 ETH", "$32,111")
+				+artist("8", "img/content/artists/artist-3.jpg", "Kohaku", "9.657 ETH", "55 ETH", "$9,654")
+				+artist("9", "img/content/artists/artist-4.jpg", "Dash", "4.543 ETH", "2 ETH", "$24,550")
+				+artist("10", "img/content/artists/artist-5.jpg", "Foxies", "5.244 ETH", "12 ETH", "$11,444")
+			svg(width="0" height="0" style="display: block")
+				clipPath(id="polygonNumber" clipPathUnits="objectBoundingBox")
+					path(d="M.396.076C.46.041.54.041.604.076l.242.129A.19.19 0 0 1 .95.371v.258a.19.19 0 0 1-.104.166L.604.924C.54.959.46.959.396.924L.154.795A.19.19 0 0 1 .05.629V.371A.19.19 0 0 1 .154.205L.396.076z")

@@ -1,0 +1,75 @@
+.offer
+    &__title
+        margin-bottom: rem(64)
+        color: $n1
+        +xl
+            margin-bottom: rem(48)
+        +t
+            margin-bottom: rem(32)
+    &__box
+        padding: rem(48) rem(40) rem(64)
+        background: $n7
+        border-radius: rem(24)
+        +w
+            padding: rem(40) rem(32)
+        +d
+            padding: rem(32)
+        +m
+            padding: rem(24)
+    &__user
+        display: flex
+        align-items: center
+        margin-bottom: rem(48)
+        +m
+            margin-bottom: rem(24)
+    &__avatar
+        position: relative
+        flex-shrink: 0
+        width: rem(96)
+        height: rem(96)
+        margin-right: rem(32)
+        +m
+            width: rem(80)
+            height: rem(80)
+            margin-right: rem(24)
+        img
+            +imageCover
+            border-radius: 50%
+    &__details
+        flex-grow: 1
+    &__line
+        display: flex
+        justify-content: space-between
+        margin-bottom: rem(4)
+        +base
+        color: $n5
+    &__code
+        +m
+            display: none
+    &__login
+        +body2Bold
+        color: $n1
+    &__subtitle
+        +title
+        color: $n5
+    &__item
+        display: flex
+        align-items: center
+        padding: rem(24) 0
+        +base
+        &:not(:last-child)
+            border-bottom: rem(1) solid $o6
+    &__price
+        color: $n1
+        &:nth-child(1)
+            margin-right: auto
+    &__label
+        margin-right: auto
+        color: $n5
+    &__value
+        color: $n1
+    &__percent
+        margin-right: rem(16)
+        color: $n4
+    &__button
+        margin-top: rem(40)

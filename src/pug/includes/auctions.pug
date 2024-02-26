@@ -1,0 +1,40 @@
+// auctions
+.auctions
+	.auctions__row
+		.auctions__col(style="background-color:" + colorAuctions)
+			.auctions__wrap
+				.auctions__title.h1 Auctions ending soon
+				a.button-white.button-counter.auctions__button(href="discover.html") explorer more
+					span 109
+		.auctions__col
+			.auctions__list
+				mixin auctionsItem(image, avatar, login, crypto, price, data)
+					a.auctions__item(href="nft-current-bid.html")
+						img.auctions__image(src=image alt="")
+						.auctions__details
+							.auctions__author
+								.auctions__avatar
+									img(src=avatar alt="")
+								| @
+								=login
+							.auctions__line
+								.auctions__box
+									.auctions__category Current bid
+									.auctions__crypto.h3=crypto 
+									.auctions__price=price
+								.auctions__box
+									.auctions__category Auction ends in
+									// timer
+									ul.timer.js-timer(data-countdown=data)
+										li
+											span.timer__value.hours.h3
+											span.timer__text <span>hrs</span>hours
+										li
+											span.timer__value.minutes.h3
+											span.timer__text <span>min</span>minutes
+										li
+											span.timer__value.seconds.h3
+											span.timer__text <span>sec</span>seconds
+				+auctionsItem("img/content/auction-pic-1.jpg", "img/content/artists/artist-1.jpg", "randomdash", "8.00 ETH", "$24,635.39", "12/24/2028 23:29:59")
+				+auctionsItem("img/content/auction-pic-2.jpg", "img/content/artists/artist-2.jpg", "tranmautritam", "12.55 ETH", "$13,434.12", "12/24/2028 11:59:59")
+				+auctionsItem("img/content/auction-pic-1.jpg", "img/content/artists/artist-3.jpg", "randomdash", "33.11 ETH", "33.11 ETH", "12/24/2028 18:09:59")

@@ -1,0 +1,76 @@
+---
+title: Crypter 2
+classLinkMenuBlog: active
+---
+extends layouts/layout
+block content
+	// home
+	.home
+		img(src="img/content/blog-detail.jpg" alt="")
+		.home__wrap
+			.home__title.h1 8 things you didn't know you could do on Crypter
+			.home__info.h4 Crypter NFT marketplace blog
+	// article
+	.article
+		.article__content.content
+			h3 Introducing CrypterOS the operating system for web3.
+			h5 Web3 is the next evolution of the internet built on open infrastructure where information, code, and objects are free to travel.
+			p We are laying the groundwork for web3 — the next generation of the internet full of limitless possibilities. Join the millions of creators, collectors, and curators who are on this journey with you.
+			p Ratione earum minus quia consectetur debitis magnam. Ex nemo maiores reiciendis distinctio. Cupiditate nihil doloribus repellat voluptatem.
+			p Et id possimus harum ipsa eum odit labore. Eligendi repellat impedit eaque corporis dolor ipsam vero. Vitae beatae aperiam consequatur consequatur praesentium minus sequi magni.
+			p Et neque dolor velit aliquid earum reiciendis sequi harum. Laudantium et doloremque deleniti quaerat. Dolorem molestias doloribus. Non non laboriosam ut assumenda vel aut sequi.
+		.article__photo
+			img(src="img/content/content-pic-1.jpg" alt="")
+		.article__content.content
+			h3 Introducing CrypterOS the operating system for web3.
+			h5 Web3 is the next evolution of the internet built on open infrastructure where information, code, and objects are free to travel.
+			figure
+				img(src="img/content/content-pic-2.jpg" alt="")
+			p We are laying the groundwork for web3 — the next generation of the internet full of limitless possibilities. Join the millions of creators, collectors, and curators who are on this journey with you.
+			p Ratione earum minus quia consectetur debitis magnam. Ex nemo maiores reiciendis distinctio. Cupiditate nihil doloribus repellat voluptatem.
+			p Et id possimus harum ipsa eum odit labore. Eligendi repellat impedit eaque corporis dolor ipsam vero. Vitae beatae aperiam consequatur consequatur praesentium minus sequi magni.
+			p Et neque dolor velit aliquid earum reiciendis sequi harum. Laudantium et doloremque deleniti quaerat. Dolorem molestias doloribus. Non non laboriosam ut assumenda vel aut sequi.
+			ul
+				li Connect your wallet to Crypter
+				li Guide to collection NFT artworks on Crypter
+				li Marketplace balance
+				li Marketplace fees
+				li What is offer price?
+		.article__share
+			.article__info share this post
+			.article__socials
+				a.article__social(href="https://www.instagram.com/crypternet/" target="_blank")
+					+i('instagram')
+					| Instagram
+				a.article__social(href="https://twitter.com/crypter" target="_blank")
+					+i('twitter')
+					| Twitter
+				a.article__social(href="https://www.facebook.com/crypter.net/" target="_blank")
+					+i('facebook')
+					| Facebook
+	// post
+	.post
+		.post__wrapper
+			.post__title.h2 You may also like
+			.post__inner
+				// swiper
+				.swiper.swiper-post
+					.swiper-wrapper
+						mixin mainSlide(image, title, content)
+							.swiper-slide
+								a.post__item(href="blog-detail.html")
+									.post__preview
+										img(src=image alt="")
+									.post__subtitle.h4=title
+									.post__content=content
+						+mainSlide("img/content/blog-pic-1.jpg", "8 things you didn't know you could do on Crypter", "Web3 is the next evolution of the internet built on open infrastructure where information, code, and objects are free to travel.")
+						+mainSlide("img/content/blog-pic-2.jpg", "8 things you didn't know you could do on Crypter", "Web3 is the next evolution of the internet built on open infrastructure where information, code, and objects are free to travel.")
+						+mainSlide("img/content/blog-pic-3.jpg", "8 things you didn't know you could do on Crypter", "Web3 is the next evolution of the internet built on open infrastructure where information, code, and objects are free to travel.")
+						+mainSlide("img/content/blog-pic-4.jpg", "8 things you didn't know you could do on Crypter", "Web3 is the next evolution of the internet built on open infrastructure where information, code, and objects are free to travel.")
+						+mainSlide("img/content/blog-pic-1.jpg", "8 things you didn't know you could do on Crypter", "Web3 is the next evolution of the internet built on open infrastructure where information, code, and objects are free to travel.")
+						+mainSlide("img/content/blog-pic-2.jpg", "8 things you didn't know you could do on Crypter", "Web3 is the next evolution of the internet built on open infrastructure where information, code, and objects are free to travel.")
+						+mainSlide("img/content/blog-pic-3.jpg", "8 things you didn't know you could do on Crypter", "Web3 is the next evolution of the internet built on open infrastructure where information, code, and objects are free to travel.")
+						+mainSlide("img/content/blog-pic-4.jpg", "8 things you didn't know you could do on Crypter", "Web3 is the next evolution of the internet built on open infrastructure where information, code, and objects are free to travel.")
+					button.swiper-button-prev
+					button.swiper-button-next
+	include includes/newsletter

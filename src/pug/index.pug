@@ -1,0 +1,249 @@
+---
+title: Crypter 2
+headerClass: header_noRegistration
+---
+extends layouts/layout
+block content
+	// main
+	.main
+		.main__row
+			.main__col
+				.main__title.hero Curated Artwork.
+				+arrow
+			.main__col
+				.main__content We are laying the groundwork for web3 — the next generation of the internet full of limitless possibilities.
+				a.button-empty.main__search(href="discover.html") start your search
+		.main__wrapper
+			// swiper
+			.swiper.swiper-tokens
+				.swiper-wrapper
+					mixin mainSlide(image, color, title, collection, price, reserve)
+						.swiper-slide
+							.main__item
+								.main__preview
+									img(src=image alt="")
+								.main__wrap(style="background-color:" + color)
+									.main__details
+										.main__box
+											.main__category Collection
+											.main__value=collection
+										.main__box
+											.main__category Buy now
+											.main__value=price
+										.main__box
+											.main__category Reserve
+											.main__value=reserve
+									.main__subtitle.h1=title
+									.main__btns
+										a.button-stroke.main__button(href="nft.html")
+											span View NFT
+											+i('arrow-right')
+										a.button.main__button(href="place-a-bid.html") place a bid
+					+mainSlide("img/content/main-pic-1.jpg", false, "The creator network.", "Escape II", "10.00 ETH", "2.38 ETH")
+					+mainSlide("img/content/main-pic-2.jpg", "#BCE6EC", "The creator network.", "Escape I", "24.33 ETH", "5.64 ETH")
+					+mainSlide("img/content/auction-pic-2.jpg", "#B9A9FB", "The creator network.", "Escape III", "5.4 ETH", "1.5 ETH")
+				button.swiper-button-prev
+				button.swiper-button-next
+				.swiper-scrollbar
+	// hot
+	.hot
+		.hot__row
+			.hot__col
+				.hot__details
+					.hot__line
+						.hot__title.h1 Hot NFT artists of the month.
+						a.hot__link(href="ranking.html")
+							+i('arrow-right')
+					.hot__content We are laying the groundwork for web3 — the next generation of the internet full of limitless possibilities. Join the millions of creators, collectors, and curators who are on this journey with you.
+			.hot__col
+				.hot__artists
+					mixin hotArtist(number, image, login, total)
+						a.hot__artist(href="profile.html")
+							.hot__number
+								.hot__inner=number
+							.hot__avatar
+								img(src=image alt="")
+							.hot__login @
+								=login
+							.hot__total Total sale 
+								span=total
+					+hotArtist("1", "img/content/artists/artist-1.jpg", "randomdash", "12.29 ETH")
+					+hotArtist("2", "img/content/artists/artist-2.jpg", "kohaku", "24.35 ETH")
+					+hotArtist("3", "img/content/artists/artist-3.jpg", "gelo", "9.55 ETH")
+					+hotArtist("4", "img/content/artists/artist-4.jpg", "elnafrederick", "2.29 ETH")
+					+hotArtist("5", "img/content/artists/artist-5.jpg", "_kolahon", "12.29 ETH")
+					+hotArtist("6", "img/content/artists/artist-6.jpg", "mcbess", "17.65 ETH")
+					+hotArtist("7", "img/content/artists/artist-7.jpg", "aaronpenne", "77.29 ETH")
+					+hotArtist("8", "img/content/artists/artist-8.jpg", "nocellcoverage", "12.55 ETH")
+				svg(width="0" height="0" style="display: block;")
+					clipPath(id="polygonNumber" clipPathUnits="objectBoundingBox")
+						path(d="M.396.076C.46.041.54.041.604.076l.242.129A.19.19 0 0 1 .95.371v.258a.19.19 0 0 1-.104.166L.604.924C.54.959.46.959.396.924L.154.795A.19.19 0 0 1 .05.629V.371A.19.19 0 0 1 .154.205L.396.076z")
+				.hot__btns
+					a.button-wide.hot__button(href="ranking.html") EXPLORE MORE
+	// dream
+	.dream
+		.dream__wrap
+			.dream__details
+				.dream__item
+					.dream__avatar
+						img(src="img/content/artists/artist-1.jpg" alt="")
+					| @randomdash
+				.dream__item
+					.dream__image
+						img(src="img/content/escape.jpg" alt="")
+					| Escape
+			.dream__title.h1 Beyond the Dream.
+			.dream__line
+				.dream__box
+					.dream__text Buy now price
+					.dream__crypto.h3 8.00 ETH
+					.dream__price $24,635.39
+				a.button-white.dream__button(href="make-offer.html") MAKE OFFER
+		.dream__preview
+			img(src="img/content/balls.jpg" alt="")
+	// collections
+	.collections
+		.collections__title.h1 Curated collections.
+		.collections__wrapper
+			// swiper
+			.swiper.swiper-collections
+				.swiper-wrapper
+					mixin collectionsSlide(image1, image2, image3, counter, color, title, avatar, login, price)
+						.swiper-slide
+							a.collections__item(href="collection.html")
+								.collections__images
+									.collections__image
+										img(src=image1 alt="")
+									.collections__image
+										img(src=image2 alt="")
+									.collections__image
+										img(src=image3 alt="")
+									.collections__counter(style="background-color:" + color) +
+										=counter
+								.collections__details
+									.collections__box
+										.collections__subtitle=title
+										.collections__author
+											.collections__avatar
+												img(src=avatar alt="")
+											.collections__login @
+												=login
+									.collections__box
+										.collections__text Floor price
+										.collections__price=price
+					+collectionsSlide("img/content/collection/image-1.jpg", "img/content/collection/image-2.jpg", "img/content/collection/image-3.jpg", "4", "#BCE6EC", "Cute Planet", "img/content/artists/artist-1.jpg", "tranmautritam", "1.0 ETH")
+					+collectionsSlide("img/content/collection/image-4.jpg", "img/content/collection/image-5.jpg", "img/content/collection/image-6.jpg", "8", "#B9A9FB", "crypter all-access", "img/content/artists/artist-2.jpg", "randomdash", "1.2 ETH")
+					+collectionsSlide("img/content/collection/image-7.jpg", "img/content/collection/image-8.jpg", "img/content/collection/image-9.jpg", "12", "#DBFF73", "Beyond the Dream", "img/content/artists/artist-3.jpg", "tranmautritam", "2.4 ETH")
+					+collectionsSlide("img/content/collection/image-10.jpg", "img/content/collection/image-11.jpg", "img/content/collection/image-12.jpg", "6", "#BCE6EC", "Beyond the Dream", "img/content/artists/artist-4.jpg", "randomdash", "5.2 ETH")
+					+collectionsSlide("img/content/collection/image-1.jpg", "img/content/collection/image-2.jpg", "img/content/collection/image-3.jpg", "4", "#BCE6EC", "Cute Planet", "img/content/artists/artist-1.jpg", "tranmautritam", "1.0 ETH")
+					+collectionsSlide("img/content/collection/image-4.jpg", "img/content/collection/image-5.jpg", "img/content/collection/image-6.jpg", "8", "#B9A9FB", "crypter all-access", "img/content/artists/artist-2.jpg", "randomdash", "1.2 ETH")
+					+collectionsSlide("img/content/collection/image-7.jpg", "img/content/collection/image-8.jpg", "img/content/collection/image-9.jpg", "12", "#DBFF73", "Beyond the Dream", "img/content/artists/artist-3.jpg", "tranmautritam", "2.4 ETH")
+					+collectionsSlide("img/content/collection/image-10.jpg", "img/content/collection/image-11.jpg", "img/content/collection/image-12.jpg", "6", "#BCE6EC", "Beyond the Dream", "img/content/artists/artist-4.jpg", "randomdash", "5.2 ETH")
+					+collectionsSlide("img/content/collection/image-1.jpg", "img/content/collection/image-2.jpg", "img/content/collection/image-3.jpg", "4", "#BCE6EC", "Cute Planet", "img/content/artists/artist-1.jpg", "tranmautritam", "1.0 ETH")
+					+collectionsSlide("img/content/collection/image-4.jpg", "img/content/collection/image-5.jpg", "img/content/collection/image-6.jpg", "8", "#B9A9FB", "crypter all-access", "img/content/artists/artist-2.jpg", "randomdash", "1.2 ETH")
+					+collectionsSlide("img/content/collection/image-7.jpg", "img/content/collection/image-8.jpg", "img/content/collection/image-9.jpg", "12", "#DBFF73", "Beyond the Dream", "img/content/artists/artist-3.jpg", "tranmautritam", "2.4 ETH")
+					+collectionsSlide("img/content/collection/image-10.jpg", "img/content/collection/image-11.jpg", "img/content/collection/image-12.jpg", "6", "#BCE6EC", "Beyond the Dream", "img/content/artists/artist-4.jpg", "randomdash", "5.2 ETH")
+				button.swiper-button-prev
+				button.swiper-button-next
+				.swiper-scrollbar
+	include includes/auctions
+	// spotlight
+	.spotlight
+		.spotlight__head
+			.spotlight__description
+				.spotlight__title.h1 Spotlight.
+				.spotlight__info Projects you&apos;ll love
+			// tabs
+			.tabs.tabs_dark
+				a.tabs__button.active(href="#") 1 days
+				a.tabs__button(href="#") 7 days
+				a.tabs__button(href="#") 30 days
+		.spotlight__list
+			mixin spotlightImage(image, title, price, avatar1, avatar2, avatar3)
+				a.spotlight__card(href="nft.html")
+					.spotlight__preview
+						img(src=image alt="")
+					.spotlight__line
+						.spotlight__details
+							.spotlight__subtitle=title
+							.spotlight__price <span>Buy now</span> 
+								=price
+						// users
+						.users
+							if avatar1
+								.users__item
+									img(src=avatar1 alt="")
+							if avatar2
+								.users__item
+									img(src=avatar2 alt="")
+							if avatar3
+								.users__item
+									img(src=avatar3 alt="")
+			+spotlightImage("img/content/projects/image-1.jpg", "The Currency", "12.29 ETH", "img/content/users/avatar-1.jpg", "img/content/users/avatar-2.jpg", "img/content/users/avatar-3.jpg")
+			+spotlightImage("img/content/projects/image-2.jpg", "CutePlanet®", "43.55 ETH", "img/content/users/avatar-1.jpg", "img/content/users/avatar-3.jpg")
+			+spotlightImage("img/content/projects/image-3.jpg", "The Currency", "8.55 ETH", "img/content/users/avatar-1.jpg", "img/content/users/avatar-2.jpg")
+			+spotlightImage("img/content/projects/image-4.jpg", "The Currency", "14.11 ETH", "img/content/users/avatar-4.jpg", "img/content/users/avatar-2.jpg", "img/content/users/avatar-4.jpg")
+			+spotlightImage("img/content/projects/image-5.jpg", "The Currency", "32.29 ETH", "img/content/users/avatar-4.jpg", "img/content/users/avatar-2.jpg", "img/content/users/avatar-3.jpg")
+			+spotlightImage("img/content/projects/image-6.jpg", "CutePlanet®", "43.55 ETH", "img/content/users/avatar-1.jpg", "img/content/users/avatar-3.jpg")
+			+spotlightImage("img/content/projects/image-7.jpg", "The Currency", "8.55 ETH", "img/content/users/avatar-1.jpg", "img/content/users/avatar-2.jpg")
+			+spotlightImage("img/content/projects/image-8.jpg", "The Currency", "14.11 ETH", "img/content/users/avatar-4.jpg", "img/content/users/avatar-2.jpg", "img/content/users/avatar-4.jpg")
+			+spotlightImage("img/content/projects/image-9.jpg", "CutePlanet®", "43.55 ETH", "img/content/users/avatar-1.jpg", "img/content/users/avatar-3.jpg")
+			+spotlightImage("img/content/projects/image-10.jpg", "The Currency", "8.55 ETH", "img/content/users/avatar-1.jpg", "img/content/users/avatar-2.jpg")
+			+spotlightImage("img/content/projects/image-11.jpg", "The Currency", "14.11 ETH", "img/content/users/avatar-4.jpg", "img/content/users/avatar-2.jpg", "img/content/users/avatar-4.jpg")
+			+spotlightImage("img/content/projects/image-12.jpg", "CutePlanet®", "43.55 ETH", "img/content/users/avatar-1.jpg", "img/content/users/avatar-3.jpg")
+		.spotlight__btns
+			button.button-white.button-counter.spotlight__button explorer more
+				span 109
+	// creativity
+	.creativity
+		.creativity__head
+			.creativity__title.h1 Own your creativity.
+			.creativity__info Each web3 community is unique and deserves a custom marketplace with its own look, features, fees.
+		.creativity__list
+			.creativity__item
+				.creativity__preview
+					video.creativity__video(autoPlay muted loop playsInline)
+						source(src="img/videos/video-1.mp4" type="video/mp4")
+				.creativity__wrap
+					.creativity__content
+						h2 Your Collection, <br>your way.
+						p In web3, artists are taking back ownership and control over their creativity. All collections on Crypter are creator-owned smart contracts that will stand the test of time.
+						ul
+							li You’ll earn a 10% royalty for all secondary market sales.
+							li Creativity is valuable on Crypter
+					a.button-stroke.button-medium.creativity__button(href="blog-detail.html") learn more
+			.creativity__item
+				.creativity__preview
+					video.creativity__video(autoPlay muted loop playsInline)
+						source(src="img/videos/video-2.mp4" type="video/mp4")
+				.creativity__wrap
+					.creativity__content
+						h2 Lowest <br>mint fees
+						p Minting an NFT is like adding your signature to a painting. Make your mark in web3 with works that are emblematic of your creative practice.
+						p Plus, you’ll earn a 10% royalty for all secondary market sales. Forever.
+					a.button-stroke.button-medium.creativity__button(href="blog-detail.html") learn more
+			.creativity__item
+				.creativity__preview
+					video.creativity__video(autoPlay muted loop playsInline)
+						source(src="img/videos/video-3.mp4" type="video/mp4")
+				.creativity__wrap
+					.creativity__content
+						h2 Create together, earn together.
+						p Add a Split to your NFT to seamlessly pay creative collaborators—photographers, producers, choreographers, dancers, poets—and so on.
+						p You can also use Splits to donate directly to the causes you care about most. That’s the web3 way.
+					a.button-stroke.button-medium.creativity__button(href="blog-detail.html") learn more
+	include includes/newsletter
+	
+
+
+
+
+
+
+
+
+
+
+
+
+	

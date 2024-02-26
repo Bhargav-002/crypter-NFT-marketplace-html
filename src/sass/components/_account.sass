@@ -1,0 +1,211 @@
+.account
+    position: relative
+    +m
+        position: static
+    &__head
+        position: relative
+        width: rem(48)
+        height: rem(48)
+        -webkit-tap-highlight-color: rgba(0,0,0,0)
+        +m
+            width: rem(40)
+            height: rem(40)
+        img
+            +imageCover
+            border-radius: 50%
+        &:before
+            content: ""
+            position: absolute
+            top: 0
+            left: 0
+            z-index: 1
+            width: 100%
+            height: 100%
+            border-radius: 50%
+            box-shadow: inset 0 0 0 rem(2) $o1
+            transition: box-shadow .2s
+    &__body
+        position: absolute
+        top: calc(100% + rem(40))
+        right: rem(-70)
+        width: rem(760)
+        max-height: calc(100vh - rem(128))
+        padding: 5.5vh rem(40) 2.4vh
+        background: $n8
+        border-radius: rem(32)
+        overflow: auto
+        transform: translateY(rem(20))
+        visibility: hidden
+        opacity: 0
+        transition: all .2s
+        +rh(900)
+            width: rem(640)
+            padding: rem(40) rem(40) rem(20)
+        +xl
+            width: rem(640)
+            padding: rem(40) rem(40) rem(20)
+        +w
+            width: rem(560)
+        +d
+            width: rem(480)
+        +m
+            top: 100%
+            left: rem(16)
+            right: rem(16)
+            z-index: 12
+            width: auto
+            max-height: calc(calc(var(--vh, 1vh) * 100) - rem(104))
+            padding: rem(24) rem(24) rem(12)
+    &__close
+        position: absolute
+        top: rem(24)
+        right: rem(24)
+        border-color: $n6
+        +d
+            top: rem(16)
+            right: rem(16)
+        +m
+            top: rem(4)
+            width: rem(40)
+            height: rem(40)
+            border: none
+        .icon
+            fill: $n1
+        &:hover
+            background: $n7
+            border-color: $n7
+    &__user
+        display: flex
+        align-items: center
+        margin-bottom: rem(32)
+        padding-bottom: rem(32)
+        border-bottom: rem(1) solid $n7
+        +rh(900)
+            margin-bottom: rem(24)
+            padding-bottom: rem(24)
+        +xl
+            margin-bottom: rem(24)
+            padding-bottom: rem(24)
+    &__avatar
+        position: relative
+        flex-shrink: 0
+        width: rem(96)
+        height: rem(96)
+        margin-right: rem(32)
+        +d
+            margin-right: rem(24)
+        +m
+            width: rem(72)
+            height: rem(72)
+            margin-right: rem(16)
+        img
+            +imageCover
+            border-radius: 50%
+    &__man
+        color: $n1
+        +xl
+            +h3S
+        +m
+            +h4S
+    &__login
+        +body2Bold
+        color: $n5
+        +m
+            +base
+    &__top
+        display: flex
+        align-items: center
+        margin-bottom: rem(24)
+        +xl
+            margin-bottom: rem(8)
+    &__title
+        margin-right: auto
+        +title
+        color: $n5
+        +w
+            +base
+    &__actions
+        display: flex
+        flex-wrap: wrap
+        margin-top: rem(-8)
+    &__action
+        display: flex
+        align-items: center
+        margin: rem(8) 0 0 rem(32)
+        +title
+        color: $n1
+        +w
+            +base
+        .icon
+            margin-right: rem(12)
+            fill: $n5
+            transition: fill .2s
+        &:nth-child(1)
+            +d
+                display: none
+        &:hover
+            .icon
+                fill: $n1
+    &__description
+        margin-bottom: rem(24)
+        padding: rem(32) rem(40)
+        border-radius: rem(24)
+        background: $o7-75
+        +xl
+            padding: rem(16)
+    &__code
+        display: inline-flex
+        align-items: center
+        margin-bottom: rem(12)
+        padding: rem(8)
+        background: $o6
+        border-radius: rem(12)
+        +base
+        color: $n1
+        +xl
+            +baseS
+        &:after
+            content: ""
+            display: block
+            width: rem(16)
+            height: rem(16)
+            margin-left: rem(12)
+            border-radius: 50%
+            background: $a4
+    &__line
+        display: flex
+        justify-content: space-between
+        +rh(900)
+            +h3M
+        +xl
+            +h3S
+        +d
+            +h3S
+        +m
+            +h4S
+    &__crypto
+        color: $n3
+    &__price
+        color: $n5
+    .link
+        padding: 1.8vh rem(40)
+        +rh(900)
+            font-size: rem(32)
+            line-height: rem(40)
+        +xl
+            padding: rem(16)
+            +h4S
+        +d
+            +h4S
+        +m
+            padding: rem(12) rem(16)
+        &:not(:last-child)
+            border-bottom: rem(1) solid $n7
+    &.active
+        .account__head
+            &:before
+                box-shadow: inset 0 0 0 rem(4) $n1
+        .account__body
+            transform: translateY(0)
+            visibility: visible
+            opacity: 1

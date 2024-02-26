@@ -1,0 +1,126 @@
+.popup
+    display: flex
+    width: 100%
+    margin: auto
+    min-height: 100vh
+    background: $n8
+    z-index: 2
+    +m
+        min-height: calc(var(--vh, 1vh) * 100)
+    .mfp-close
+        position: absolute
+        top: rem(32)
+        right: rem(32)
+        z-index: 10
+        width: rem(60)
+        height: rem(60)
+        border: rem(2) solid $n6
+        background: transparent
+        border-radius: 50%
+        line-height: normal
+        opacity: 1
+        font-size: 0
+        -webkit-tap-highlight-color: rgba(0,0,0,0)
+        transition: all .2s
+        +w
+            top: rem(16)
+            right: rem(16)
+            width: rem(48)
+            height: rem(48)
+        svg
+            pointer-events: none
+            fill: $n1
+        &:hover
+            background: $n7
+            border-color: $n7
+    &_menu
+        .mfp-close
+            top: rem(18)
+            right: rem(22)
+            border: none
+            +w
+                top: rem(24)
+                right: rem(29)
+            +d
+                right: rem(12)
+            +m
+                top: rem(20)
+                right: rem(11)
+            svg
+                width: rem(32)
+                height: rem(32)
+                +w
+                    width: rem(24)
+                    height: rem(24)
+            &:hover
+                +t
+                    background: none
+    &_connect
+        .mfp-close
+            border-color: $n7
+            +t
+                svg
+                    fill: $n7
+    &_add-story
+        width: 100%
+        max-width: rem(438)
+        min-height: auto !important
+        margin: auto
+        background: transparent
+        +xl
+            width: rem(375)
+        +m
+            width: 100%
+    &_story
+        background: none
+        .mfp-close
+            background: $n7
+            +m
+                top: rem(24)
+                background: none
+                border-color: rgba($n1, .25)
+
+.mfp-container
+    padding: 0
+
+.mfp-content
+    position: static
+        
+@media (max-width: 900px)
+    .mfp-container
+        padding: 0
+            
+.mfp-bg
+    background: none
+    opacity: 1
+    &:before
+        content: ""
+        position: fixed
+        inset: 0
+        z-index: -1
+        background: rgba(#202020, .95)
+        backdrop-filter: blur(rem(16))
+
+.mfp-zoom-in 
+    .popup,
+    .mfp-iframe-scaler
+        opacity: 0
+        transition: all 0.5s ease-in-out
+        // transform: scale(0.85) 
+    &.mfp-bg 
+        opacity: 0
+        transition: all 0.5s ease-out
+    &.mfp-ready
+        .popup,
+        .mfp-iframe-scaler
+            opacity: 1
+            // transform: scale(1) 
+        &.mfp-bg 
+            opacity: 1
+    &.mfp-removing 
+        .popup,
+        .mfp-iframe-scaler
+            // transform: scale(0.85) 
+            opacity: 0
+        &.mfp-bg
+            opacity: 0

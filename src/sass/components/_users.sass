@@ -1,0 +1,37 @@
+.users
+    display: flex
+    align-items: center
+    &__group
+        display: flex
+    &__title
+        margin-right: rem(12)
+        +base
+        color: $n5
+    &__item
+        position: relative
+        flex-shrink: 0
+        width: rem(32)
+        height: rem(32)
+        border-radius: 50%
+        font-size: 0
+        img
+            +imageCover
+            border-radius: 50%
+        &:not(:nth-child(1))
+            margin-left: rem(-8)
+    &__counter
+        position: relative
+        display: flex
+        justify-content: center
+        align-items: center
+        flex-shrink: 0
+        width: rem(32)
+        height: rem(32)
+        margin-left: rem(-8)
+        background: $n1
+        border-radius: 50%
+        +captionSmall
+    &_border
+        .users__item,
+        .users__counter
+            border: rem(1) solid $n7

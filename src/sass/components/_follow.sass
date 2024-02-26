@@ -1,0 +1,45 @@
+.follow
+    min-width: rem(160)
+    padding: 0 rem(16)
+    background: transparent
+    border-color: $n6
+    .icon-check
+        display: none
+    &__text
+        span
+            display: none
+    &:hover
+        border-color: $n3
+        background: transparent
+        color: $n1
+        .icon
+            fill: $n1
+    &.active
+        background: $n1
+        border-color: $n1
+        color: $n8
+        .icon
+            fill: $n8
+            &-check
+                display: inline-block
+            &-plus
+                display: none
+        .follow__text
+            span
+                display: inline
+    &_dark
+        border-color: $n3
+        color: $n7
+        .icon
+            fill: $n7
+        &:hover
+            border-color: $n7
+            color: $n7
+            .icon
+                fill: $n7
+        &.active
+            background: $n7
+            border-color: $n7
+            color: $n1
+            .icon
+                fill: $n1

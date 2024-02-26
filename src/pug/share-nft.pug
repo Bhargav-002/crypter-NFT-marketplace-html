@@ -1,0 +1,43 @@
+---
+title: Crypter 2
+pageColor: "#F1F4F4"
+headerEmpty: true
+headerClass: header_noShadow
+footerHide: true
+---
+extends layouts/layout
+block content
+	// share
+	.share
+		.share__wrapper
+			.share__inner
+				.share__row
+					.share__col
+						.share__photo
+							img(src="img/content/main-pic-1.jpg" alt="")
+						.share__subtitle.h3 Escape
+						.share__item
+							.share__preview
+								img(src="img/content/balls.jpg" alt="")
+							.share__wrap
+								.share__name Cute Planet
+								.share__price 12 NFTs
+							.share__lines
+						.share__field
+							input.share__input(type="text" name="site" value="https://crypter.crypter.net/nft/escape")
+							button.share__copy
+								+i('copy')
+					.share__col
+						.share__title.h1 Share this NFT
+						.share__info Share this NFT with your social Community
+						.share__socials
+							a.share__social(href="https://twitter.com/crypter" target="_blank")
+								+i('twitter')
+							a.share__social(href="https://www.facebook.com/crypter.net/" target="_blank")
+								+i('facebook')
+							a.share__social(href="https://www.linkedin.com/company/crypter" target="_blank")
+								+i('linkedin')
+							a.share__social(href="https://www.instagram.com/crypternet/" target="_blank")
+								+i('instagram')
+				a.button-circle.share__close(href="index.html")
+					+i('close-fat')

@@ -1,0 +1,27 @@
+// newsletter
+.newsletter
+	.newsletter__row
+		.newsletter__col
+			.newsletter__title.h2 Download
+			.newsletter__content In web3, artists are taking back ownership and control over their creativity. All collections on Crypter are creator-owned smart contracts that will stand the test of time.
+			.newsletter__btns
+				a.button-large.newsletter__button(href="https://crypter.net/" target="_blank")
+					span apple store
+					+i('apple')
+				a.button-white.button-large.newsletter__button(href="https://crypter.net/" target="_blank")
+					span google play
+					+i('google-play')
+		.newsletter__col
+			.newsletter__title.h2 Newsletter
+			.newsletter__info Get the latest Crypter updates
+			form.newsletter__form(action="")
+				.newsletter__fieldset
+					.field.field_icon.field_light
+						.field__wrap
+							input.field__input(type="text" name="profile" placeholder="Name" required)
+							+i('profile')
+					.field.field_icon.field_light
+						.field__wrap
+							input.field__input(type="email" name="email" placeholder="Email" required)
+							+i('email')
+				button.button-white.button-large.newsletter__button(type="submit") SUBSCRIBE NOW

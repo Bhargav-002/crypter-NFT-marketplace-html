@@ -1,0 +1,149 @@
+---
+title: Crypter 2
+footerHide: true
+---
+extends layouts/layout
+block content
+	// details
+	.details
+		.details__row
+			.details__col
+				// preview
+				.details-preview
+					img(src="img/content/cute-planet-large.jpg" alt="")
+					.details-preview__actions
+						button.details-preview__action
+							+i('music')
+						button.details-preview__action
+							+i('full-view')
+				// statistics
+				.details__box.details-statistics
+					.details-statistics__list
+						.details-statistics__item
+							.details-statistics__label Created by
+							.details-statistics__flex
+								.details-statistics__avatar.history
+									img(src="img/content/avatar.jpg" alt="")
+								.details-statistics__wrap
+									.details-statistics__title Dash
+									.details-statistics__login @randomdash
+						.details-statistics__item
+							.details-statistics__label Collection
+							.details-statistics__flex
+								.details-statistics__image
+									img(src="img/content/robot.jpg" alt="")
+								.details-statistics__wrap
+									.details-statistics__title Cute Planet
+									.details-statistics__category Cute
+				.details__box
+					.details__stage.h4 Details
+					.details__content We are laying the groundwork for web3 — the next generation of the internet full of limitless possibilities. Join the millions of creators, collectors, and curators who are on this journey with you.
+					// links
+					.details-links
+						a.details-links__link(href="https://crypter.net/" target="_blank")
+							+i('country')
+							| View on Etherscane
+						a.details-links__link(href="https://crypter.net/" target="_blank")
+							+i('link')
+							| View metadata
+						a.details-links__link(href="https://crypter.net/" target="_blank")
+							+i('link')
+							| View on IPFS
+					// tags
+					.details-tags
+						.details-tags__item Cute
+						.details-tags__item Robot
+						.details-tags__item Cute Planet
+						.details-tags__item Suitcase
+						.details-tags__item Spaceship
+						.details-tags__item Animation
+						.details-tags__item Redshift Render
+						.details-tags__item 3D
+						.details-tags__item Character
+						.details-tags__item Cinema 4D
+				.details__box
+					.details__stage.h4 Provenance
+					// provenance
+					.details-provenance
+						.details-provenance__action
+							.details-provenance__avatar.history
+								img(src="img/content/avatar.jpg" alt="")
+							.details-provenance__content Auction won by <span>0x56C1...8eCC</span>
+							.details-provenance__title.h4 Sold for <span>6.05 ETH</span> $9,256.58
+							.details-provenance__date Aug 18, 2022 at 18:80
+							a.details-provenance__link(href="https://crypter.net/" target="_blank")
+								| Auction settled by <span>@Kohaku</span>
+								+i('external-link')
+						.details-provenance__list
+							.details-provenance__item
+								.details-provenance__avatar.history
+									img(src="img/content/avatar.jpg" alt="")
+								.details-provenance__details
+									.details-provenance__content  Bid placed by <span>0x56C1...8eCC</span>
+									.details-provenance__date Aug 18, 2022 at 18:80
+								.details-provenance__price 5.00 ETH
+								a.details-provenance__link(href="https://crypter.net/" target="_blank")
+									+i('external-link')
+							.details-provenance__item
+								.details-provenance__avatar.history
+									img(src="img/content/avatar.jpg" alt="")
+								.details-provenance__details
+									.details-provenance__content  Listed by <span>@randomdash</span>
+									.details-provenance__date Aug 18, 2022 at 18:80
+								.details-provenance__price 5.00 ETH
+								a.details-provenance__link(href="https://crypter.net/" target="_blank")
+									+i('external-link')
+							.details-provenance__item
+								.details-provenance__avatar.history
+									img(src="img/content/avatar.jpg" alt="")
+								.details-provenance__details
+									.details-provenance__content  Minted by <span>@randomdash</span>
+									.details-provenance__date Aug 18, 2022 at 18:80
+								.details-provenance__price 5.00 ETH
+								a.details-provenance__link(href="https://crypter.net/" target="_blank")
+									+i('external-link')
+			.details__col
+				.details__wrap
+					// caption
+					.details-caption
+						.details-caption__line
+							.details-caption__title.h2 The Explorer
+							.details-caption__actions
+								button.button-circle.button-medium.details-caption__button
+									+i('dots')
+								a.button-circle.button-medium.details-caption__button(href="https://crypter.net/" target="_blank")
+									+i('share')
+						.details-caption__date
+							+i('external-link')
+							| Minted on Aug 18, 2022
+					// bid
+					.details-bid
+						.details-bid__head
+							.details-bid__flex
+								.details-bid__box
+									.details-bid__label Current bid
+									.details-bid__price.h4 1.50 ETH
+								.details-bid__box
+									.details-bid__label Auction ends in
+									// timer
+									ul.timer.js-timer(data-countdown="12/24/2028 23:29:59")
+										li
+											span.timer__value.hours.h3
+											span.timer__text <span class="timer__desktop">hours</span><span class="timer__tablet">hrs</span><span class="timer__mobile">h</span>
+										li
+											span.timer__value.minutes.h3
+											span.timer__text <span class="timer__desktop">minutes</span><span class="timer__tablet">min</span><span class="timer__mobile">m</span>
+										li
+											span.timer__value.seconds.h3
+											span.timer__text <span class="timer__desktop">seconds</span><span class="timer__tablet">sec</span><span class="timer__mobile">s</span>
+							a.button-medium.button-wide.details-bid__button(href="place-a-bid.html") place a bid
+						.details-bid__foot
+							.details-bid__info Owned by
+							.details-bid__user
+								.details-bid__avatar.history
+									img(src="img/content/avatar.jpg" alt="")
+								.details-bid__wrap
+									.details-bid__author Dash
+									.details-bid__code 0x56C1...8eCC
+
+

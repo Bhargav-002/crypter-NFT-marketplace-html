@@ -1,0 +1,144 @@
+.feed
+    &__row
+        display: flex
+        align-items: flex-end
+        padding: rem(48) rem(80)
+        +xl
+            padding: rem(48) rem(64)
+        +w
+            padding: rem(40)
+        +t
+            padding: rem(40) rem(24)
+        +m
+            display: block
+            padding: rem(24)
+    &__details
+        display: flex
+        align-items: flex-start
+        margin-right: auto
+        +m
+            display: block
+            margin: 0 0 rem(32)
+    .arrow
+        margin: rem(18) 0 0 rem(70)
+        +w
+            margin-left: rem(40)
+        +t
+            margin: rem(12) 0 0 rem(24)
+        +m
+            margin: rem(16) 0 0
+    &__box
+        text-align: right
+        +m
+            text-align: left
+    &__info
+        margin-bottom: rem(8)
+        color: $n5
+        +w
+            +h4S
+        +m
+            margin-bottom: rem(4)
+            +body1S
+    &__wrapper
+        box-sizing: border-box
+    &__item
+        display: flex
+        +t
+            display: block
+    &__preview,
+    &__wrap
+        flex: 0 0 50%
+        width: 50%
+        +t
+            width: 100%
+    &__preview,
+    &__photo
+        position: relative
+        font-size: 0
+        &:before
+            content: ""
+            display: block
+            padding-bottom: 100%
+        img
+            +imageCover
+    &__wrap
+        display: flex
+        flex-direction: column
+        align-items: flex-start
+        padding: rem(80)
+        background: $a2
+        box-sizing: border-box
+        +xl
+            padding: rem(64)
+        +w
+            padding: rem(64) rem(40)
+        +d
+            padding: rem(40)
+        +t
+            padding: rem(40) rem(24)
+        +m
+            padding: rem(24)
+    &__photo
+        width: rem(180)
+        height: rem(180)
+        margin-bottom: auto
+        +t
+            margin-bottom: rem(40)
+        +m
+            width: rem(120)
+            height: rem(120)
+        img
+            border-radius: rem(32)
+            +m
+                border-radius: rem(16)
+    &__line
+        display: flex
+        align-items: flex-start
+        width: 100%
+        margin-bottom: rem(32)
+        +m
+            margin-bottom: rem(24)
+    &__subtitle
+        margin-right: auto
+        color: $n7
+        +w
+            padding-top: rem(8)
+            +h1S
+        +m
+            padding-top: 0
+    &__category
+        flex-shrink: 0
+        margin: rem(4) 0 0 rem(32)
+        padding: rem(16) rem(20)
+        border-radius: rem(16)
+        background: $n7
+        color: $n1
+        +w
+            margin-top: 0
+            +h4S
+        +m
+            margin-left: rem(24)
+            padding: rem(8) rem(16)
+            +base
+    &__author
+        display: inline-flex
+        align-items: center
+        padding: rem(12) rem(24)
+        border-radius: rem(16)
+        background: $n1
+        +body1
+        color: $n7
+        +w
+            +body1S
+        +m
+            padding: rem(8)
+    &__avatar
+        position: relative
+        flex-shrink: 0
+        width: rem(48)
+        height: rem(48)
+        margin-right: rem(16)
+        img
+            +imageCover
+            border-radius: rem(32)
+        

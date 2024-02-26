@@ -1,0 +1,182 @@
+.main
+    &__row
+        display: flex
+        padding: rem(48) rem(40)
+        +xl
+            padding: rem(24) 0
+        +w
+            padding: rem(32) rem(8)
+        +d
+            padding: rem(16) rem(8)
+        +t
+            display: block
+            padding: rem(48) rem(24)
+    &__col
+        flex: 0 0 calc(50% - rem(80))
+        width: calc(50% - rem(80))
+        margin: 0 rem(40)
+        +xl
+            flex: 0 0 50%
+            width: 50%
+            margin: 0
+            padding: 0 rem(64)
+        +w
+            padding: 0 rem(32)
+        +t
+            width: 100%
+            padding: 0
+        &:nth-child(1)
+            display: flex
+            justify-content: space-between
+            +m
+                display: block
+        &:nth-child(2)
+            display: flex
+            flex-direction: column
+            justify-content: space-between
+            align-items: flex-start
+            padding: rem(24) 0 rem(8)
+            +xl
+                padding: rem(8) rem(64)
+            +w
+                padding: rem(8) rem(32)
+            +t
+                margin-top: rem(32)
+                padding: 0
+    .arrow
+        margin: rem(18) 0 0 rem(18)
+        +w
+            margin-top: rem(12)
+        +m
+            margin: rem(20) 0 0
+    &__content
+        +body2
+        color: #686A6C
+        +w
+            +body2M
+    &__search
+        +t
+            margin-top: rem(24)
+    &__wrapper
+        position: relative
+        z-index: 2
+    &__item
+        display: flex
+        box-sizing: border-box
+        +t
+            display: block
+
+    &__preview,
+    &__wrap
+        flex: 0 0 50%
+        width: 50%
+        +t
+            width: 100%
+    &__preview
+        position: relative
+        font-size: 0
+        &:before
+            content: ""
+            display: block
+            padding-bottom: 100%
+        img
+            +imageCover
+    &__wrap
+        display: flex
+        flex-direction: column
+        padding: rem(80)
+        background: $a4
+        +xl
+            padding: rem(80) rem(64)
+        +w
+            padding: rem(64) rem(40)
+        +d
+            padding: rem(40)
+        +t
+            padding: rem(48) rem(24)
+    &__details
+        display: flex
+        margin-bottom: auto
+        box-shadow: 0 rem(16) rem(40) rem(-8) rgba(0, 0, 0, 0.12)
+        border-radius: rem(12)
+        background: $n1
+        +t
+            margin-bottom: rem(48)
+    &__box
+        flex: 0 0 calc(33.333%)
+        width: calc(33.333%)
+        padding: rem(16) 0 rem(16) rem(24)
+        +d
+            flex: 0 0 calc(50%)
+            width: calc(50%)
+        +t
+            flex: 0 0 calc(33.333%)
+            width: calc(33.333%)
+        +m
+            flex: 0 0 calc(50%)
+            width: calc(50%)
+        &:nth-child(3)
+            +w
+                display: none
+            +t
+                display: block
+            +m
+                display: none
+    &__category
+        margin-bottom: rem(4)
+        +base
+        color: $n5
+        +m
+            +baseS
+    &__value
+        position: relative
+        padding-left: rem(36)
+        overflow: hidden
+        white-space: nowrap
+        text-overflow: ellipsis
+        +body1
+        +d
+            +body1M
+        +m
+            +body1S
+        &:before,
+        &:after
+            content: ''
+            position: absolute
+            top: 50%
+            transform: translateY(-50%)
+            border-radius: 50%
+        &:before
+            left: 0
+            width: rem(24)
+            height: rem(24)
+            border: rem(2) solid $n4
+        &:after
+            left: rem(10)
+            width: rem(4)
+            height: rem(4)
+            background: $n4
+    &__subtitle
+        margin-bottom: rem(40)
+        +w
+            +h1M
+        +d
+            margin-bottom: rem(32)
+        +m
+            +h1S
+    &__btns
+        display: flex
+        margin: 0 rem(-12)
+        +m
+            display: block
+            margin: 0
+    &__button
+        flex: 0 0 calc(50% - rem(24))
+        width: calc(50% - rem(24))
+        height: rem(64)
+        margin: 0 rem(12)
+        +m
+            width: 100%
+            margin: 0
+            &:not(:last-child)
+                margin-bottom: rem(16)

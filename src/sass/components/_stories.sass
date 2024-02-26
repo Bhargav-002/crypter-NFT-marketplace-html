@@ -1,0 +1,250 @@
+.stories
+    padding: rem(128) rem(80) rem(100)
+    overflow: hidden
+    +xl
+        padding: rem(90) rem(64)
+    +w
+        padding: rem(64) rem(40)
+    +d
+        padding: rem(40)
+    +t
+        padding: rem(40) rem(24)
+    +m
+        padding: rem(24)
+    &__title
+        margin-bottom: rem(56)
+        +w
+            margin-bottom: rem(40)
+        +d
+            +h1S
+        +m
+            margin-bottom: rem(32)
+    &__list
+        display: flex
+        margin: 0 rem(-80)
+        padding-bottom: rem(28)
+        overflow: auto
+        -ms-overflow-style: none
+        scrollbar-width: none
+        -webkit-overflow-scrolling: touch
+        +xl
+            margin: 0 rem(-64)
+            padding-bottom: rem(12)
+        +d
+            margin: 0 rem(-40)
+        +t
+            margin: 0 rem(-24)
+        +m
+            padding-bottom: rem(8)
+        &::-webkit-scrollbar
+            display: none
+        &:before,
+        &:after
+            content: ""
+            flex-shrink: 0
+            display: block
+            width: rem(56)
+            +xl
+                width: rem(48)
+            +d
+                width: rem(24)
+            +t
+                width: rem(8)
+    &__add
+        display: flex
+        justify-content: center
+        align-items: center
+        flex-shrink: 0
+        width: rem(104)
+        height: rem(104)
+        margin: 0 rem(24)
+        border: rem(4) solid $n1
+        background: $n8
+        border-radius: 50%
+        transition: background .2s
+        +xl
+            margin: 0 rem(20)
+        +w
+            margin: 0 rem(12)
+        .icon
+            width: rem(32)
+            height: rem(32)
+            fill: $n1
+        &:hover
+            background: $n7
+    &__item
+        position: relative
+        flex-shrink: 0
+        width: rem(104)
+        height: rem(104)
+        margin: 0 rem(24)
+        border: rem(4) solid $n1
+        +xl
+            margin: 0 rem(20)
+        +w
+            margin: 0 rem(12)
+        img
+            z-index: 2
+            +imageCover
+            border-radius: 50%
+            transition: transform .7s
+        &:before,
+        &:after
+            content: ""
+            position: absolute
+            border-radius: 50%
+        &:before
+            inset: rem(-4)
+            background: $grd
+        &:after
+            z-index: 1
+            inset: rem(-2)
+            background: $n1
+        &:hover
+            img
+                transform: scale(1.1)
+    &__image
+        position: relative
+        display: block
+        width: 100%
+        height: 100%
+        border-radius: 50%
+        overflow: hidden
+    &__load
+        width: 100%
+        padding: rem(12)
+        border: rem(1) dashed $n5
+        border-radius: rem(24)
+        +m
+            padding: 0
+            border: none
+            border-radius: 0
+    &__inner
+        position: relative
+        height: rem(760)
+        padding: rem(260) rem(24) rem(32)
+        background: $n7
+        border-radius: rem(20)
+        overflow: hidden
+        text-align: center
+        +xl
+            height: rem(662)
+        +m
+            height: 100vh
+            border-radius: 0
+    &__input
+        position: absolute
+        top: 0
+        left: 0
+        font-size: rem(800)
+        opacity: 0
+    &__details
+        position: absolute
+        top: 50%
+        left: 0
+        right: 0
+        transform: translateY(-50%)
+        padding: 0 rem(24)
+        pointer-events: none
+    &__icon
+        display: inline-flex
+        justify-content: center
+        align-items: center
+        width: rem(102)
+        height: rem(102)
+        margin-bottom: rem(32)
+        background: $n1
+        border-radius: 50%
+        .icon
+            fill: $n7
+    &__subtitle
+        margin-bottom: rem(16)
+        color: $n1
+    &__text
+        +baseMedium
+        color: $n4
+    &__button
+        position: absolute
+        z-index: 2
+        left: 50%
+        bottom: rem(32)
+        min-width: rem(262)
+        padding: rem(16)
+        transform: translateX(-50%)
+    &__wrapper
+        width: rem(1360)
+        margin: auto
+        +xl
+            width: rem(1034)
+        +r(1180)
+            width: rem(980)
+        +t
+            width: rem(360)
+        +m
+            width: 100%
+    &__box
+        position: relative
+        height: rem(736)
+        margin: 0 rem(20)
+        border-radius: rem(20)
+        background: $n8
+        overflow: hidden
+        transition: height .2s
+        +xl
+            height: rem(552)
+            margin: 0 rem(16)
+        +m
+            height: 100vh
+            margin: 0
+            border-radius: 0
+        &:after
+            content: ""
+            position: absolute
+            z-index: 2
+            inset: 0
+            background: rgba(#000, .85)
+            pointer-events: none
+            transition: all .2s
+    &__wrap
+        height: 100%
+        margin: 0 rem(-2)
+    &__preview
+        position: relative
+        height: 100%
+        margin: 0 rem(2)
+        img
+            +imageCover
+    &__author
+        position: absolute
+        top: rem(20)
+        left: rem(20)
+        right: rem(20)
+        z-index: 3
+        display: flex
+        color: $n3
+        +m
+            padding-right: rem(64)
+    &__avatar
+        position: relative
+        flex-shrink: 0
+        width: rem(60)
+        height: rem(60)
+        margin-right: rem(18)
+        padding: rem(2)
+        box-sizing: border-box
+        border-radius: 50%
+        img
+            +imageCover
+            z-index: 2
+            border-radius: 50%
+        &:before
+            content: ""
+            position: absolute
+            inset: rem(-2)
+            background: $grd
+            border-radius: 50%
+    &__name
+        margin-bottom: rem(-6)
+        +title
+    &__login
+        +captionBold

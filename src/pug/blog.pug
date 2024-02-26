@@ -1,0 +1,40 @@
+---
+title: Crypter 2
+classLinkMenuBlog: active
+---
+extends layouts/layout
+block content
+	// home
+	.home
+		img(src="img/content/blog.jpg" alt="")
+		.home__wrap
+			.home__title.hero Crypter Blog
+			.home__info.h4 Crypter NFT marketplace blog
+	// blog
+	.blog
+		.blog__list
+			mixin blogItem(image, title)
+				a.blog__item(href="blog-detail.html")
+					.blog__preview
+						img(src=image alt="")
+						.button-large.blog__button
+							span Continue reading
+							+i('arrow-right')
+					.blog__details
+						.blog__title.h2=title
+						.blog__author
+							.blog__avatar.history
+								img(src="img/content/author-1.jpg" alt="")
+							.blog__wrap
+								.blog__name Crypter II
+								.blog__date 26 Aug 2022
+						.blog__content Web3 is the next evolution of the internet built on open infrastructure where information, code, and objects are free to travel.
+			+blogItem("img/content/blog-pic-1.jpg", "8 things you didn't know you could do on Crypter")
+			+blogItem("img/content/blog-pic-2.jpg", "Introducing CrypterOS the operating system for web3.")
+			+blogItem("img/content/blog-pic-3.jpg", "8 things you didn't know you could do on Crypter")
+			+blogItem("img/content/blog-pic-4.jpg", "8 things you didn't know you could do on Crypter")
+		.blog__btns
+			button.button-stroke-grey.blog__button
+				span load more
+				+spinner('dark')
+	include includes/newsletter

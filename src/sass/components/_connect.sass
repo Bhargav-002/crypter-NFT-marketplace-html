@@ -1,0 +1,229 @@
+.connect
+    display: flex
+    flex-grow: 1
+    width: 100%
+    &__row
+        display: flex
+        flex-grow: 1
+        overflow: hidden
+        +t
+            flex-direction: column
+        &:nth-child(2),
+        &:nth-child(3)
+            display: none
+    &__col
+        display: flex
+        flex-direction: column
+        flex: 0 0 50%
+        width: 50%
+        padding: rem(80)
+        +xl
+            padding: rem(64)
+        +w
+            padding: rem(40)
+        +t
+            flex: 0 0 auto
+            width: auto
+            padding: rem(40) rem(24)
+    .logo
+        margin-bottom: auto
+        +t
+            margin: 0 0 rem(40)
+    &__line
+        display: flex
+        justify-content: space-between
+        margin-bottom: rem(24)
+        +m
+            display: block
+    .arrow
+        margin: rem(8) 0 0 rem(20)
+        +m
+            margin: rem(24) 0 0
+    &__info
+        max-width: rem(450)
+        +body1
+        +w
+            +body1M
+        +m
+            +body1S
+    &__cookies
+        display: flex
+        justify-content: space-between
+        margin-top: rem(48)
+        padding: rem(16)
+        background: $o7-50
+        border-radius: rem(12)
+        +m
+            margin-top: rem(40)
+    &__accept
+        +caption
+        color: $n1
+        transition: color .2s
+        &:hover
+            color: $s2
+    &__cookies &__text
+        +caption
+        color: $n5
+        span
+            color: $n1
+    &__back
+        position: absolute
+        top: rem(32)
+        right: rem(32)
+        z-index: 15
+        border-color: $n7
+        background: $n8
+        +w
+            top: rem(16)
+            right: rem(16)
+            width: rem(48)
+            height: rem(48)
+        .icon
+            fill: $n1
+        &:hover
+            background: $n7
+    &__scan
+        margin: auto 0
+    &__scan &__subtitle
+        margin-bottom: rem(48)
+        color: $n1
+        +t
+            margin-bottom: rem(24)
+    &__code
+        position: relative
+        display: flex
+        justify-content: center
+        align-items: center
+        height: rem(460)
+        border-radius: rem(32)
+        background: $o7-50
+        +d
+            height: rem(432)
+        +m
+            height: rem(327)
+            border-radius: rem(28)
+        img
+            max-width: rem(256)
+    &__lines
+        span
+            position: absolute
+            width: rem(40)
+            height: rem(40)
+            border-style: solid
+            border-color: $n6
+            pointer-events: none
+            +m
+                width: rem(34)
+                height: rem(34)
+            &:nth-child(1),
+            &:nth-child(2)
+                top: rem(16)
+                +m
+                    top: rem(12)
+            &:nth-child(2),
+            &:nth-child(3)
+                right: rem(16)
+                +m
+                    right: rem(12)
+            &:nth-child(3),
+            &:nth-child(4)
+                bottom: rem(16)
+                +m
+                    bottom: rem(12)
+            &:nth-child(1),
+            &:nth-child(4)
+                left: rem(16)
+                +m
+                    left: rem(12)
+            &:nth-child(1)
+                border-width: rem(1) 0 0 rem(1)
+                border-top-left-radius: rem(24)
+                +m
+                    border-top-left-radius: rem(21)
+            &:nth-child(2)
+                border-width: rem(1) rem(1) 0 0
+                border-top-right-radius: rem(24)
+                +m
+                    border-top-right-radius: rem(21)
+            &:nth-child(3)
+                border-width: 0 rem(1) rem(1) 0
+                border-bottom-right-radius: rem(24)
+                +m
+                    border-bottom-right-radius: rem(21)
+            &:nth-child(4)
+                border-width: 0 0 rem(1) rem(1)
+                border-bottom-left-radius: rem(24)
+                +m
+                    border-bottom-left-radius: rem(21)
+    &__foot
+        margin-top: rem(40)
+        text-align: center
+    &__foot &__text
+        margin-bottom: rem(4)
+        +base
+        color: $n5
+    &__foot &__question
+        +base
+        color: $n1
+        transition: color .2s
+        &:hover
+            color: $s2
+    &__message
+        margin: auto 0
+    &__logo
+        width: rem(80)
+        margin-bottom: rem(64)
+        +t
+            margin-bottom: rem(40)
+    &__message &__subtitle
+        margin-bottom: rem(24)
+        color: $n1
+    &__content
+        max-width: rem(450)
+        margin-bottom: rem(40)
+        +base
+        color: $n5
+        +m
+            +baseS
+    &__btns
+        display: flex
+        margin: 0 rem(-6) rem(40)
+        +m
+            display: block
+            margin: 0 0 rem(40)
+    &__btns &__button
+        flex: 0 0 calc(50% - rem(12))
+        width: calc(50% - rem(12))
+        margin: 0 rem(6)
+        +m
+            width: 100%
+            height: rem(60)
+            margin: 0
+            &:not(:last-child)
+                margin-bottom: rem(12)
+    &__links
+        display: flex
+        justify-content: space-between
+        align-items: center
+    &__links &__question,
+    &__learn
+        +base
+        transition: color .2s
+        +m
+            +baseS
+    &__links &__question
+        color: $n5
+        &:hover
+            color: $n1
+    &__learn
+        display: flex
+        align-items: center
+        color: $n1
+        .icon
+            margin-left: rem(12)
+            fill: $n1
+            transition: fill .2s
+        &:hover
+            color: $s2
+            .icon
+                fill: $s2

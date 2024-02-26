@@ -1,0 +1,31 @@
+---
+title: Crypter 2
+headerEmpty: true
+footerHide: true
+---
+extends layouts/layout
+block content
+	// create
+	.create
+		.create__col
+			.create__wrap
+				.create__top
+					.create__title.h1 Deploy your smart contract
+					a.button-circle.create__back(href="create-step-1.html")
+						+i('arrow-left')
+				.create__stage Approve the transaction in your wallet
+				.create__note Deploying a smart contract means that your collection will be added to the blockchain. Anytime you interact with the blockchain, you’ll need to approve the transaction and pay a gas fee to the network.
+				a.button-large.create__button(href="create-congrats.html")
+					span deploy your contract
+					+i('arrow-right')
+		.create__col
+			.create__subtitle Preview
+			.create__picture
+				img(src="img/content/create-preview.jpg" alt="")
+				.create__image
+					img(src="img/content/create-image.jpg" alt="")
+				.create__category CUTE
+			.create__bottom
+				.create__name.h4 Cute Planet
+				.create__value 0 NFT
+			
